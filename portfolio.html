@@ -2,7 +2,6 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<!-- แก้ไขแท็ก meta name="viewport" ให้ถูกต้องเพื่อความรองรับมือถือ -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>แฟ้มสะสมงานของฉัน</title>
 <style>
@@ -17,30 +16,50 @@ body {
     margin: 0 auto; 
 }
 
-/* 💡 โค้ด CSS สำหรับรูปโปรไฟล์ */
-.profile-container {
-    margin-bottom: 30px; /* เว้นระยะห่างด้านล่าง */
-}
-.profile-img {
-    width: 200px;         /* ปรับขนาดความกว้างรูปโปรไฟล์ (พิกเซล) */
-    height: 200px;        /* ปรับขนาดความสูงรูปโปรไฟล์ (พิกเซล) */
-    object-fit: cover;    /* จัดสัดส่วนรูปอัตโนมัติ ไม่ให้รูปเบี้ยว */
-    border-radius: 50%;    /* ทำรูปโปรไฟล์เป็นวงกลม */
-    border: 5px solid white; /* เพิ่มขอบสีขาว */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* เพิ่มเงาให้รูปดูมีมิติ */
+/* 💡 โค้ด CSS จัดการกลุ่มรูปภาพให้เรียงกัน ซ้าย-กลาง-ขวา */
+.profile-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;          /* ระยะห่างระหว่างรูป */
+    margin-bottom: 30px;
+    flex-wrap: wrap;    /* หากจอแคบมาก รูปจะช่วยขยับลงมาไม่ให้ล้น */
 }
 
-/* 💡 โค้ด CSS กรอบสี่เหลี่ยมสีขาวที่เพิ่มเข้ามาใหม่ */
+/* รูปโปรไฟล์หลัก (ตรงกลาง) */
+.profile-img-main {
+    width: 200px;         
+    height: 200px;        
+    object-fit: cover;    
+    border-radius: 50%;    
+    border: 5px solid white; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+    order: 2;           /* กำหนดให้อยู่ตรงกลางเสมอ */
+}
+
+/* รูปรอง (ซ้ายและขวา) */
+.profile-img-side {
+    width: 140px;         /* ขนาดเล็กลงมาเล็กน้อยเพื่อความสมดุล */
+    height: 140px;        
+    object-fit: cover;    
+    border-radius: 50%;    
+    border: 4px solid white; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+}
+.img-left { order: 1; }  /* จัดให้อยู่ฝั่งซ้าย */
+.img-right { order: 3; } /* จัดให้อยู่ฝั่งขวา */
+
+/* โค้ด CSS กรอบสี่เหลี่ยมสีขาว */
 .title-card {
     background: white;
     padding: 20px;
     margin: 20px 0;
-    border-radius: 8px; /* ปรับให้มุมมน 8px เท่ากับกล่องผลงาน */
+    border-radius: 8px; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .title-card h1 {
     margin: 0;
-    font-size: 28px; /* ปรับขนาดหัวข้อให้เด่นชัด */
+    font-size: 28px; 
     color: #000000;
     line-height: 1.4;
 }
@@ -85,34 +104,32 @@ body {
 <body>
 <div class="container">
     
-    <!-- ส่วนของรูปโปรไฟล์ -->
-    <div class="profile-container">
-        <img src="Screenshot 2026-06-12 103231.png" alt="รูปโปรไฟล์ ณัฐวรรธน์ เอื้อรักษ์โอฬาร" class="profile-img">
+    <div class="profile-group">
+        <img src="images/left.png" alt="รูปเพื่อน/รูปเสริมซ้าย" class="profile-img-side img-left">
+        
+        <img src="Screenshot 2026-06-12 103231.png" alt="รูปโปรไฟล์ ณัฐวรรธน์ เอื้อรักษ์โอฬาร" class="profile-img-main">
+        
+        <img src="images/right.png" alt="รูปเพื่อน/รูปเสริมขวา" class="profile-img-side img-right">
     </div>
 
-    <!-- 💡 กรอบสี่เหลี่ยมที่ 1: ชื่อแฟ้มสะสมงานจนถึงโอฬาร -->
     <div class="title-card">
         <h1>แฟ้มสะสมงาน (Portfolio) ของณัฐวรรธน์ เอื้อรักษ์โอฬาร</h1>
     </div>
 
-    <!-- 💡 กรอบสี่เหลี่ยมที่ 2: ข้อความอธิบายพื้นที่รวบรวมผลงาน -->
     <div class="desc-card">
         <p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
     </div>
 
-    <!-- กล่องผลงานชิ้นที่ 1 -->
     <div class="project-card">
         <h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์คำนวณ</h3>
         <p>รายละเอียดชิ้นงาน : เขียนอธิบายสั้นๆ ว่าทำอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง</p>
     </div>
 
-    <!-- กล่องผลงานชิ้นที่ 2 -->
     <div class="project-card">
         <h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
         <p>รายละเอียดชิ้นงาน : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
     </div>
 
-    <!-- ปุ่มกดกลับหน้าแรก -->
     <a href="index.html" class="btn">กลับหน้าแรก</a>
 </div>
 </body>
