@@ -1,306 +1,355 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>คำนำ - TCAS Portfolio</title>
-<style>
-body { 
-    font-family: 'Sarabun', sans-serif, system-ui; 
-    background-color: #07131e; 
-    color: #ffffff;
-    text-align: center;
-    padding: 35px 20px; 
-    margin: 0;
-}
-.container { 
-    max-width: 1050px;
-    margin: 0 auto; 
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนำ - TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Prompt', 'Sarabun', sans-serif;
+        }
 
-/* 🏷️ Badge หัวข้อบนสุด */
-.top-badge {
-    display: inline-block;
-    background: rgba(0, 210, 255, 0.05);
-    border: 1px solid #00d2ff;
-    color: #ffffff;
-    padding: 6px 26px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 12px rgba(0, 210, 255, 0.25);
-}
+        body {
+            background: radial-gradient(circle at center, #0f3042 0%, #061520 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
 
-/* 💡 กลุ่มโลโก้และกล่องหัวข้อหลัก */
-.header-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-}
+        .portfolio-container {
+            width: 100%;
+            max-width: 1280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
 
-.logo-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #00d2ff;
-    box-shadow: 0 0 18px rgba(0, 210, 255, 0.6);
-    object-fit: cover;
-    background: #ffffff;
-}
+        .top-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            padding: 8px 32px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #e0f7fa;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+        }
 
-.main-card {
-    flex: 1;
-    min-width: 320px;
-    background: #0d2232;
-    border: 1px solid #1a3c54;
-    border-radius: 18px;
-    padding: 22px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
+        .main-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            width: 100%;
+        }
 
-.main-card-info h2 {
-    margin: 0 0 8px 0;
-    font-size: 24px;
-    color: #ffffff;
-    font-weight: bold;
-}
+        .circle-frame {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid #8fe3ff;
+            box-shadow: 0 0 20px rgba(143, 227, 255, 0.4), inset 0 0 12px rgba(143, 227, 255, 0.3);
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #0d2838;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.main-card-info p {
-    margin: 4px 0;
-    font-size: 14px;
-    color: #c0d4e6;
-}
+        .circle-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.main-card-info .author {
-    margin-top: 14px;
-    font-size: 13px;
-    color: #8faec4;
-}
+        .center-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(0, 229, 255, 0.35);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+        }
 
-/* 🖼️ กรอบเส้นประ Add Photo ในการ์ดหลัก */
-.header-photo-box {
-    width: 120px;
-    height: 120px;
-    border: 1.5px dashed #2d5068;
-    border-radius: 14px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #6c8a9e;
-    font-size: 12px;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
+        .card-text-side {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
 
-.header-photo-box:hover {
-    border-color: #00d2ff;
-    color: #00d2ff;
-}
+        .card-text-side h1 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.2;
+        }
 
-/* 🌟 แถบเมนูนำทาง (Navigation Menu) */
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 22px 0;
-    flex-wrap: wrap;
-}
+        .card-text-side h2 {
+            font-size: 21px;
+            font-weight: 400;
+            color: #d1ecf1;
+            line-height: 1.45;
+        }
 
-.nav-btn {
-    background-color: #0b1a27;
-    color: #8ea8c3;
-    border: 1px solid #183348;
-    padding: 10px 24px;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
+        .card-text-side .course {
+            font-size: 21px;
+            font-weight: 500;
+            color: #ffffff;
+        }
 
-.nav-btn:hover {
-    color: #ffffff;
-    border-color: #00d2ff;
-}
+        .card-text-side .author {
+            font-size: 16px;
+            color: #a0c4d6;
+            margin-top: 6px;
+        }
 
-/* ปุ่มแท็บปัจจุบัน (คำนำ Active แบบเรืองแสงฟ้า) */
-.nav-btn.active {
-    background-color: #0d273a;
-    color: #ffffff;
-    border: 1.5px solid #00d2ff;
-    box-shadow: 0 0 14px rgba(0, 210, 255, 0.7);
-    font-weight: bold;
-    cursor: default;
-}
+        .card-image-side {
+            flex: 0.9;
+            display: flex;
+            justify-content: center;
+        }
 
-/* 🟡 ปุ่มกลับหน้าแรกสีทอง */
-.btn-gold {
-    display: inline-block;
-    background: linear-gradient(180deg, #e5a93c 0%, #c68313 100%);
-    color: #000000;
-    font-weight: bold;
-    padding: 10px 32px;
-    text-decoration: none;
-    border-radius: 20px;
-    font-size: 14.5px;
-    margin: 8px 0 25px 0;
-    box-shadow: 0 4px 14px rgba(229, 169, 60, 0.35);
-    transition: all 0.3s ease;
-}
+        .image-square-box {
+            width: 100%;
+            max-width: 260px;
+            aspect-ratio: 1 / 1;
+            border: 2px dashed rgba(255, 255, 255, 0.45);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #b0bec5;
+        }
 
-.btn-gold:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(229, 169, 60, 0.5);
-}
+        .image-square-box:hover {
+            border-style: solid;
+            border-color: #00e5ff;
+            background: rgba(0, 229, 255, 0.12);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+        }
 
-/* 📄 การ์ดขาวแสดงเนื้อหาด้านล่าง */
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    margin-top: 10px;
-}
+        .image-square-box .plus-icon {
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
 
-.white-card {
-    background: #ffffff;
-    color: #1a202c;
-    border-radius: 16px;
-    padding: 26px;
-    text-align: left;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
+        .image-square-box span {
+            font-size: 15px;
+            font-weight: 500;
+        }
 
-.white-card h3 {
-    margin-top: 0;
-    font-size: 18px;
-    color: #0f2333;
-    border-bottom: 2px solid #edf2f7;
-    padding-bottom: 8px;
-}
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            width: 100%;
+            margin-top: 10px;
+        }
 
-/* กรอบรูปภาพการ์ดขาวฝั่งซ้าย */
-.image-placeholder {
-    width: 100%;
-    height: 250px;
-    border: 2px dashed #cbd5e0;
-    border-radius: 12px;
-    background: #f7fafc;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #a0aec0;
-    font-size: 14px;
-}
+        .nav-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #e0f2fe;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
 
-.white-card p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #2d3748;
-    text-indent: 1.5em;
-    margin-bottom: 12px;
-}
+        .nav-btn.active, .nav-btn:hover {
+            background: rgba(0, 229, 255, 0.18);
+            border-color: #00e5ff;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+        }
 
-.signature {
-    text-align: right;
-    margin-top: 22px;
-    font-weight: bold;
-    color: #0f2333;
-    font-size: 14px;
-}
+        .gold-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(135deg, #e6c875 0%, #a88038 100%);
+            border: none;
+            color: #1a1000;
+            padding: 10px 45px;
+            border-radius: 25px;
+            font-size: 17px;
+            font-weight: 600;
+            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-/* 📱 Responsive สำหรับหน้าจอมือถือ */
-@media (max-width: 768px) {
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-    .main-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 18px;
-    }
-}
-</style>
+        .gold-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 25px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            color: #1e293b;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #0f172a;
+            border-bottom: 2px solid #00e5ff;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .info-card p {
+            font-size: 16px;
+            line-height: 1.85;
+            color: #334155;
+            margin-bottom: 14px;
+            text-indent: 1.5em;
+        }
+
+        .intro-photo-placeholder {
+            width: 100%;
+            height: 260px;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            gap: 8px;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 25px;
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .signature span {
+            font-weight: 400;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            .main-hero { flex-direction: column; }
+            .center-card { flex-direction: column; width: 100%; text-align: center; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
+    <div class="portfolio-container">
+        <div class="top-badge">TCAS PORTFOLIO</div>
 
-    <!-- Badge บนสุด -->
-    <div class="top-badge">TCAS PORTFOLIO</div>
-
-    <!-- ส่วนหัว: โลโก้ซ้าย (Mahidol_U.png) + กล่องข้อมูลหลัก + โลโก้ขวา (images.jpg) -->
-    <div class="header-group">
-        <img src="Mahidol_U.png" alt="โลโก้มหาวิทยาลัยมหิดล" class="logo-img">
-        
-        <div class="main-card">
-            <div class="main-card-info">
-                <h2>แฟ้มสะสมงาน (Portfolio)</h2>
-                <p>คณะแพทยศาสตร์ศิริราชพยาบาล<br>มหาวิทยาลัยมหิดล</p>
-                <p><strong>หลักสูตรแพทยศาสตรบัณฑิต</strong></p>
-                <div class="author">จัดทำโดย : ณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
+        <div class="main-hero">
+            <div class="circle-frame">
+                <img src="Mahidol_U.png" alt="Mahidol University Logo">
             </div>
-            
-            <div class="header-photo-box">
-                <span style="font-size: 20px; margin-bottom: 2px;">+</span>
-                <span>Add Photo</span>
+
+            <div class="center-card">
+                <div class="card-text-side">
+                    <h1>แฟ้มสะสมงาน (Portfolio)</h1>
+                    <h2>คณะแพทยศาสตร์ศิริราชพยาบาล<br>มหาวิทยาลัยมหิดล</h2>
+                    <div class="course">หลักสูตรแพทยศาสตรบัณฑิต</div>
+                    <div class="author">จัดทำโดย : ณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
+                </div>
+
+                <div class="card-image-side">
+                    <div class="image-square-box">
+                        <div class="plus-icon">+</div>
+                        <span>Add Photo</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <img src="images.jpg" alt="โลโก้คณะแพทยศาสตร์ศิริราชพยาบาล" class="logo-img">
-    </div>
-
-    <!-- แถบปุ่มกดนำทาง (ปุ่ม "คำนำ" Active เรืองแสง) -->
-    <div class="nav-menu">
-        <a href="portfolio.html" class="nav-btn">PORTFOLIO</a>
-        <a href="#" class="nav-btn active">คำนำ</a>
-        <a href="profile.html" class="nav-btn">ประวัติส่วนตัว</a>
-        <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
-        <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
-    </div>
-
-    <!-- ปุ่มกลับหน้าแรกสีทอง -->
-    <a href="index.html" class="btn-gold">กลับหน้าแรก</a>
-
-    <!-- โซนเนื้อหาการ์ดสีขาวด้านล่าง -->
-    <div class="content-grid">
-        
-        <!-- การ์ดฝั่งซ้าย: รูปภาพคำนำ -->
-        <div class="white-card">
-            <h3>รูปภาพประกอบคำนำ</h3>
-            <div class="image-placeholder">
-                <span style="font-size: 28px; margin-bottom: 6px;">📷</span>
-                <span>ใส่รูปภาพของคุณที่นี่</span>
+            <div class="circle-frame">
+                <img src="images.jpg" alt="Profile Picture">
             </div>
         </div>
 
-        <!-- การ์ดฝั่งขวา: ข้อความคำนำ -->
-        <div class="white-card">
-            <h3>คำนำ (PREFACE)</h3>
-            <p>แฟ้มสะสมงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ ความสนใจ ตลอดจนผลงานและกิจกรรมต่าง ๆ ของข้าพเจ้า นายณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
-            <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมงานเล่มนี้จะทำให้ทุกท่านได้เห็นถึงความตั้งใจและความมุ่งมั่นในการเรียนรู้เพื่อพัฒนาตนเองเข้าสู่การศึกษาต่อในระดับอุดมศึกษาต่อไป</p>
-            <p>ขอขอบพระคุณ คุณครู คุณพ่อ คุณแม่ และเพื่อน ๆ ที่ให้การสนับสนุนและเป็นกำลังใจที่ดีเสมอมา หากมีข้อผิดพลาดประการใด ข้าพเจ้าขออภัยมา ณ ที่นี้ด้วยครับ</p>
-            
-            <div class="signature">
-                ณัฐวรรธน์ เอื้อรักษ์โอฬาร<br>
-                <span style="font-weight: normal; color: #718096; font-size: 12px;">ผู้จัดทำ</span>
+        <!-- แถบเมนู (เปิดใช้งานแท็บ คำนำ) -->
+        <div class="nav-tabs">
+            <a href="index.html" class="nav-btn">PORTFOLIO</a>
+            <a href="intro.html" class="nav-btn active">คำนำ</a>
+            <a href="profile.html" class="nav-btn">ประวัติส่วนตัว</a>
+            <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
+            <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
+        </div>
+
+        <a href="index.html" class="gold-btn">กลับหน้าแรก</a>
+
+        <!-- เนื้อหาหน้า คำนำ -->
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>รูปภาพประกอบคำนำ</h3>
+                <div class="intro-photo-placeholder">
+                    <span style="font-size: 32px;">📷</span>
+                    <span>ใส่รูปภาพของคุณที่นี่</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>คำนำ (PREFACE)</h3>
+                <p>แฟ้มสะสมงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ ความสนใจ ตลอดจนผลงานและกิจกรรมต่าง ๆ ของข้าพเจ้า นายณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
+                <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมงานเล่มนี้จะทำให้ทุกท่านได้เห็นถึงความตั้งใจและความมุ่งมั่นในการเรียนรู้เพื่อพัฒนาตนเองเข้าสู่การศึกษาต่อในระดับอุดมศึกษาต่อไป</p>
+                <p>ขอขอบพระคุณ คุณครู คุณพ่อ คุณแม่ และเพื่อน ๆ ที่ให้การสนับสนุนและเป็นกำลังใจที่ดีเสมอมา หากมีข้อผิดพลาดประการใด ข้าพเจ้าขออภัยมา ณ ที่นี้ด้วยครับ</p>
+                
+                <div class="signature">
+                    ณัฐวรรธน์ เอื้อรักษ์โอฬาร<br>
+                    <span>ผู้จัดทำ</span>
+                </div>
             </div>
         </div>
 
     </div>
-
-</div>
 
 </body>
 </html>
