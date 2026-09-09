@@ -136,7 +136,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ปุ่มแท็บปัจจุบัน (Active) อยู่หน้าเดิมเมื่อคลิก */
+/* ปุ่มแท็บปัจจุบัน (Active) */
 .nav-btn.active {
     background-color: #0d2232;
     color: #ffffff;
@@ -186,9 +186,6 @@ body {
     padding: 30px;
     text-align: left;
     box-shadow: 0 8px 22px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .white-card h3 {
@@ -224,59 +221,10 @@ body {
 
 .signature {
     text-align: right;
-    margin-top: 20px;
+    margin-top: 25px;
     font-weight: bold;
     color: #0f2333;
     font-size: 15px;
-}
-
-/* ➡️ ปุ่มนำทางด้านล่าง */
-.bottom-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #e2e8f0;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn-page {
-    padding: 12px 24px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn-prev {
-    background-color: #edf2f7;
-    color: #4a5568;
-    border: 1px solid #cbd5e0;
-}
-
-.btn-prev:hover {
-    background-color: #e2e8f0;
-    color: #1a202c;
-}
-
-.btn-next {
-    background-color: #0f2333;
-    color: #ffffff;
-    border: 1px solid #00d2ff;
-    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.3);
-}
-
-.btn-next:hover {
-    background-color: #00d2ff;
-    color: #07131e;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 210, 255, 0.5);
 }
 
 /* 📱 Responsive สำหรับหน้าจอมือถือ */
@@ -288,15 +236,6 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 20px;
-    }
-    .bottom-nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .btn-page {
-        width: 100%;
-        justify-content: center;
-        box-sizing: border-box;
     }
 }
 </style>
@@ -329,7 +268,7 @@ body {
         <img src="network_KKU.png" alt="โลโก้ขวา" class="logo-img">
     </div>
 
-    <!-- แถบปุ่มกดนำทาง (ตั้งค่าปุ่ม "คำนำ" ให้เป็น href="#" เพื่อให้อยู่หน้าเดิม) -->
+    <!-- แถบปุ่มกดนำทาง -->
     <div class="nav-menu">
         <a href="portfolio.html" class="nav-btn">PORTFOLIO</a>
         <a href="#" class="nav-btn active">คำนำ</a>
@@ -346,33 +285,23 @@ body {
         
         <!-- การ์ดฝั่งซ้าย: รูปภาพคำนำ -->
         <div class="white-card">
-            <div>
-                <h3>รูปภาพประกอบคำนำ</h3>
-                <div class="image-placeholder">
-                    <span style="font-size: 32px; margin-bottom: 8px;">📷</span>
-                    <span>ใส่รูปภาพของคุณที่นี่</span>
-                </div>
+            <h3>รูปภาพประกอบคำนำ</h3>
+            <div class="image-placeholder">
+                <span style="font-size: 32px; margin-bottom: 8px;">📷</span>
+                <span>ใส่รูปภาพของคุณที่นี่</span>
             </div>
         </div>
 
         <!-- การ์ดฝั่งขวา: ข้อความคำนำ -->
         <div class="white-card">
-            <div>
-                <h3>คำนำ (PREFACE)</h3>
-                <p>แฟ้มสะสมงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ ความสนใจ ตลอดจนผลงานและกิจกรรมต่าง ๆ ของข้าพเจ้า นายณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
-                <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมงานเล่มนี้จะทำให้ทุกท่านได้เห็นถึงความตั้งใจและความมุ่งมั่นในการเรียนรู้เพื่อพัฒนาตนเองเข้าสู่การศึกษาต่อในระดับอุดมศึกษาต่อไป</p>
-                <p>ขอขอบพระคุณ คุณครู คุณพ่อ คุณแม่ และเพื่อน ๆ ที่ให้การสนับสนุนและเป็นกำลังใจที่ดีเสมอมา หากมีข้อผิดพลาดประการใด ข้าพเจ้าขออภัยมา ณ ที่นี้ด้วยครับ</p>
-                
-                <div class="signature">
-                    ณัฐวรรธน์ เอื้อรักษ์โอฬาร<br>
-                    <span style="font-weight: normal; color: #718096; font-size: 13px;">ผู้จัดทำ</span>
-                </div>
-            </div>
-
-            <!-- 🔘 แถบปุ่มกดไปต่อ / ย้อนกลับ ด้านล่างสุด -->
-            <div class="bottom-nav">
-                <a href="portfolio.html" class="btn-page btn-prev">⬅️ หน้าก่อนหน้า (Portfolio)</a>
-                <a href="profile.html" class="btn-page btn-next">หน้าถัดไป (ประวัติส่วนตัว) ➔</a>
+            <h3>คำนำ (PREFACE)</h3>
+            <p>แฟ้มสะสมงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ ความสนใจ ตลอดจนผลงานและกิจกรรมต่าง ๆ ของข้าพเจ้า นายณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
+            <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมงานเล่มนี้จะทำให้ทุกท่านได้เห็นถึงความตั้งใจและความมุ่งมั่นในการเรียนรู้เพื่อพัฒนาตนเองเข้าสู่การศึกษาต่อในระดับอุดมศึกษาต่อไป</p>
+            <p>ขอขอบพระคุณ คุณครู คุณพ่อ คุณแม่ และเพื่อน ๆ ที่ให้การสนับสนุนและเป็นกำลังใจที่ดีเสมอมา หากมีข้อผิดพลาดประการใด ข้าพเจ้าขออภัยมา ณ ที่นี้ด้วยครับ</p>
+            
+            <div class="signature">
+                ณัฐวรรธน์ เอื้อรักษ์โอฬาร<br>
+                <span style="font-weight: normal; color: #718096; font-size: 13px;">ผู้จัดทำ</span>
             </div>
         </div>
 
