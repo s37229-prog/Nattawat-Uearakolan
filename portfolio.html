@@ -4,183 +4,271 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>แฟ้มสะสมงาน - คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล</title>
+<!-- นำเข้าฟอนต์ Prompt จาก Google Fonts ให้ตัวหนังสือสวยงามอ่านง่าย -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-body { 
-    font-family: sans-serif; 
-    /* 🌟 ปรับพื้นหลังเป็นสีน้ำเงินมหิดลผสมสีเขียวศิริราช */
-    background: linear-gradient(135deg, #002147 0%, #004D3C 100%); 
-    text-align: center;
-    padding: 30px 15px; 
-    min-height: 100vh;
-}
-.container { 
-    max-width: 800px; 
-    margin: 0 auto; 
+* {
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 💡 โค้ด CSS จัดการกลุ่มรูปภาพให้เรียงกัน ซ้าย-กลาง-ขวา */
+body { 
+    font-family: 'Prompt', sans-serif; 
+    /* 🌟 พื้นหลังแบบ Deep Radial Gradient น้ำเงินมหิดล - เขียวศิริราช */
+    background: radial-gradient(circle at 50% 0%, #00382B 0%, #001830 70%, #000F1F 100%);
+    color: #333;
+    text-align: center;
+    padding: 40px 15px; 
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* แสงเรืองวงกลมด้านหลัง (Background Ambient Glow) */
+body::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container { 
+    max-width: 860px; 
+    margin: 0 auto; 
+    position: relative;
+    z-index: 1;
+}
+
+/* 💡 รูปโปรไฟล์ 3 รูป */
 .profile-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;          /* ระยะห่างระหว่างรูป */
-    margin-bottom: 30px;
-    flex-wrap: wrap;    /* หากจอแคบมาก รูปจะช่วยขยับลงมาไม่ให้ล้น */
+    gap: 25px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
 }
 
-/* รูปโปรไฟล์หลัก (ตรงกลาง) - ตกแต่งด้วยขอบสีทอง */
+/* รูปโปรไฟล์หลักตรงกลาง + อนิเมชันลอยแบบนุ่มนวล */
 .profile-img-main {
-    width: 200px;         
-    height: 200px;        
+    width: 210px;         
+    height: 210px;        
     object-fit: cover;    
     border-radius: 50%;    
-    border: 5px solid #D4AF37; /* ขอบสีทองมหิดล */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-    order: 2;           /* กำหนดให้อยู่ตรงกลางเสมอ */
+    border: 4px solid #D4AF37; /* ขอบสีทองมหิดล */
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 10px 25px rgba(0,0,0,0.5); 
+    order: 2;
+    animation: float 4s ease-in-out infinite;
 }
 
-/* รูปรอง (ซ้ายและขวา) */
+/* รูปรองซ้ายขวา */
 .profile-img-side {
-    width: 140px;         /* ขนาดเล็กลงมาเล็กน้อยเพื่อความสมดุล */
-    height: 140px;        
+    width: 135px;         
+    height: 135px;        
     object-fit: cover;    
     border-radius: 50%;    
-    border: 4px solid #ffffff; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    border: 3px solid rgba(255, 255, 255, 0.9); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    background: #fff;
 }
-.img-left { order: 1; }  /* จัดให้อยู่ฝั่งซ้าย */
-.img-right { order: 3; } /* จัดให้อยู่ฝั่งขวา */
 
-/* โค้ด CSS กรอบสี่เหลี่ยมสีขาว */
-.title-card {
-    background: white;
-    padding: 20px;
-    margin: 20px 0 15px 0;
-    border-radius: 8px; 
-    border-top: 5px solid #004D3C; /* ขอบบนสีเขียวศิริราช */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+.profile-img-side:hover {
+    transform: scale(1.08) rotate(2deg);
+    border-color: #D4AF37;
 }
+
+.img-left { order: 1; }  
+.img-right { order: 3; } 
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* 🏷️ แท็กป้ายสถานะ (Badge) */
+.badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* 📄 การ์ดหัวข้อหลัก (Glassmorphism Concept) */
+.title-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px 25px;
+    margin: 20px 0 15px 0;
+    border-radius: 16px; 
+    border-top: 6px solid #004D3C;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
 .title-card h1 {
     margin: 0;
     font-size: 26px; 
-    color: #002147; /* สีน้ำเงินมหิดล */
-    line-height: 1.4;
+    font-weight: 700;
+    color: #002147;
+    line-height: 1.3;
 }
+
 .title-card h2 {
-    margin: 8px 0 0 0;
+    margin: 10px 0 0 0;
     font-size: 18px;
-    color: #004D3C; /* สีเขียวศิริราช */
-    font-weight: normal;
+    font-weight: 500;
+    color: #004D3C;
 }
 
 .desc-card {
-    background: white;
-    padding: 12px 20px;
-    margin: 15px 0 20px 0;
-    border-radius: 8px;
-    border-left: 5px solid #D4AF37; /* แถบไฮไลท์สีทอง */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.desc-card p {
-    margin: 0;
-    font-size: 16px;
-    color: #2c3e50;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 14px 24px;
+    margin: 15px 0 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* 🌟 ส่วนตกแต่งแถบปุ่มกดเมนู (Navigation Menu) */
+.desc-card p {
+    margin: 0;
+    font-size: 15px;
+    color: #444;
+    font-weight: 400;
+}
+
+/* 🌟 ปุ่มเมนูนำทาง (Glass Navigation Buttons) */
 .nav-menu {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 20px 0 30px 0;
-    flex-wrap: wrap; /* รองรับการแสดงผลบนหน้าจอมือถือ */
+    gap: 12px;
+    margin: 25px 0 35px 0;
+    flex-wrap: wrap; 
 }
 
 .nav-btn {
-    background-color: #ffffff;
-    color: #002147;
-    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    padding: 12px 22px;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 25px; /* ทำมุมโค้งเป็นทรงแคปซูล */
-    border: 2px solid transparent;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 30px; 
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* เอฟเฟกต์เมื่อวางเมาส์เหนือปุ่ม */
 .nav-btn:hover {
-    background-color: #004D3C;
-    color: #ffffff;
+    background: #ffffff;
+    color: #004D3C;
     border-color: #D4AF37;
-    transform: translateY(-3px); /* ลอยขึ้นเล็กน้อย */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-/* ปุ่มแท็บปัจจุบัน (Active) */
 .nav-btn.active {
-    background-color: #002147;
+    background: linear-gradient(135deg, #004D3C 0%, #002147 100%);
     color: #ffffff;
-    border-color: #D4AF37;
-}
-
-/* กล่องผลงาน */
-.project-card { 
-    background: white; 
-    padding: 20px; 
-    margin: 20px 0; 
-    border-radius: 8px; 
-    border-left: 5px solid #004D3C; /* แถบสีเขียวศิริราช */
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1); 
-    text-align: left; 
-}
-.project-card h3 {
-    margin-top: 0;
-    color: #002147;
-}
-
-.btn { 
-    display: inline-block; 
-    background: #004D3C; 
-    color: white; 
-    padding: 12px 25px; 
-    text-decoration: none; 
-    border-radius: 5px; 
-    margin-top: 20px; 
-    font-weight: bold;
     border: 1px solid #D4AF37;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 77, 60, 0.5);
 }
+
+/* 📦 กล่องผลงาน (Interactive Cards) */
+.project-card { 
+    background: rgba(255, 255, 255, 0.96); 
+    padding: 25px; 
+    margin: 20px 0; 
+    border-radius: 14px; 
+    border-left: 6px solid #004D3C; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); 
+    text-align: left; 
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    border-left-color: #D4AF37;
+}
+
+.project-card h3 {
+    margin: 0 0 10px 0;
+    color: #002147;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.project-card p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 🔘 ปุ่มกดสไตล์ Premium Gold Button */
+.btn { 
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); 
+    color: white; 
+    padding: 12px 32px; 
+    text-decoration: none; 
+    border-radius: 30px; 
+    margin-top: 25px; 
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+}
+
 .btn:hover {
-    background: #002147;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, #E6C200 0%, #D4AF37 100%);
 }
 </style>
 </head>
 <body>
+
 <div class="container">
     
     <div class="profile-group">
-        <!-- รูปฝั่งซ้าย: Mahidol_U.png -->
+        <!-- รูปซ้าย -->
         <img src="Mahidol_U.png" alt="ตรามหาวิทยาลัยมหิดล" class="profile-img-side img-left">
         
-        <!-- รูปตรงกลาง: รูปโปรไฟล์หลัก -->
+        <!-- รูปตรงกลาง -->
         <img src="nattawat uearakolan.jpg" alt="รูปโปรไฟล์ ณัฐวรรธน์ เอื้อรักษ์โอฬาร" class="profile-img-main">
         
-        <!-- รูปฝั่งขวา: images.jpg -->
+        <!-- รูปขวา -->
         <img src="images.jpg" alt="รูปกิจกรรม" class="profile-img-side img-right">
     </div>
 
     <div class="title-card">
+        <span class="badge">TCAS PORTFOLIO</span>
         <h1>แฟ้มสะสมงาน (Portfolio)</h1>
         <h2>คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล<br>(หลักสูตรแพทยศาสตรบัณฑิต)</h2>
     </div>
 
     <div class="desc-card">
-        <p>จัดทำโดย : ณัฐวรรธน์ เอื้อรักษ์โอฬาร | พื้นที่รวบรวมผลงาน กิจกรรม และความภูมิใจ</p>
+        <p><strong>จัดทำโดย :</strong> ณัฐวรรธน์ เอื้อรักษ์โอฬาร | พื้นที่รวบรวมผลงาน ความรู้ และกิจกรรมที่ภาคภูมิใจ</p>
     </div>
 
-    <!-- 🌟 เมนูปุ่มกด 5 ปุ่มไปยังหน้า/แท็บต่างๆ -->
+    <!-- 🌟 เมนูปุ่มกด 5 ปุ่ม -->
     <div class="nav-menu">
         <a href="portfolio.html" class="nav-btn active">PORTFOLIO</a>
         <a href="preface.html" class="nav-btn">คำนำ</a>
@@ -201,5 +289,6 @@ body {
 
     <a href="index.html" class="btn">กลับหน้าแรก</a>
 </div>
+
 </body>
 </html>
