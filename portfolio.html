@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
+    <title>คำนำ - TCAS Portfolio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -165,7 +165,6 @@
             font-weight: 500;
         }
 
-        /* ปรับแต่งเมนูแท็บแบบ Hyperlink <a> */
         .nav-tabs {
             display: flex;
             flex-wrap: wrap;
@@ -196,7 +195,6 @@
             box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
         }
 
-        /* ปุ่มทองกลับหน้าแรก แบบ Hyperlink <a> */
         .gold-btn {
             display: inline-block;
             text-decoration: none;
@@ -227,7 +225,7 @@
         .info-card {
             background: #ffffff;
             color: #1e293b;
-            padding: 24px 28px;
+            padding: 28px 32px;
             border-radius: 16px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
         }
@@ -237,17 +235,21 @@
         }
 
         .info-card h3 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             color: #0f172a;
+            border-bottom: 2px solid #00e5ff;
+            padding-bottom: 8px;
+            display: inline-block;
         }
 
         .info-card p {
-            font-size: 15px;
-            line-height: 1.65;
+            font-size: 16px;
+            line-height: 1.8;
             color: #334155;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
+            text-indent: 2em;
         }
 
         @media (max-width: 900px) {
@@ -289,10 +291,10 @@
             </div>
         </div>
 
-        <!-- แท็บการนำทางเชื่อมโยงไปยังไฟล์อื่น -->
+        <!-- แท็บการนำทาง (ตั้งค่าแท็บ 'คำนำ' ให้ active) -->
         <div class="nav-tabs">
-            <a href="index.html" class="nav-btn active">PORTFOLIO</a>
-            <a href="intro.html" class="nav-btn">คำนำ</a>
+            <a href="index.html" class="nav-btn">PORTFOLIO</a>
+            <a href="intro.html" class="nav-btn active">คำนำ</a>
             <a href="profile.html" class="nav-btn">ประวัติส่วนตัว</a>
             <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
             <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
@@ -300,19 +302,12 @@
 
         <a href="index.html" class="gold-btn">กลับหน้าแรก</a>
 
-        <!-- เนื้อหาเฉพาะของหน้า PORTFOLIO -->
+        <!-- เนื้อหาเฉพาะของหน้า คำนำ -->
         <div class="info-grid">
-            <div class="info-card">
-                <h3>ข้อมูลส่วนตัว (Personal Details):</h3>
-                <p><strong>ชื่อ:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร (Nattawat Uearakolan)</p>
-                <p><strong>เกิดวันที่:</strong> XX เดือน XXX พ.ศ. XXXX &nbsp;&nbsp;<strong>สัญชาติ:</strong> ไทย</p>
-                <p>มีความสนใจในด้านการแพทย์ ศิริราชพยาบาล และการช่วยเหลือเพื่อนมนุษย์</p>
-            </div>
-            <div class="info-card">
-                <h3>ผลงานเด่นและการเข้าร่วมกิจกรรม:</h3>
-                <p>• ชนะเลิศอันดับ 1 ในการแข่งขันวิชาการ ประจำปี พ.ศ. XXXX</p>
-                <p>• ผ่านการอบรมค่ายทางวิทยาศาสตร์และทางการแพทย์</p>
-                <p>• จิตอาสาช่วยเหลือผู้ป่วยและงานบริการสังคม</p>
+            <div class="info-card full-width">
+                <h3>คำนำ (Preface)</h3>
+                <p>แฟ้มสะสมงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อนำเสนอข้อมูลประวัติส่วนตัว ประวัติการศึกษา ความรู้ ความสามารถ ทักษะ ตลอดจนการเข้าร่วมกิจกรรมและการพัฒนาตนเองในด้านต่างๆ ของข้าพเจ้า นายณัฐวรรธน์ เอื้อรักษ์โอฬาร เพื่อใช้ประกอบการพิจารณาคัดเลือกเข้าศึกษาต่อในคณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล</p>
+                <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมงานเล่มนี้จะช่วยสะท้อนให้เห็นถึงความมุ่งมั่น ความตั้งใจจริง และความพร้อมของข้าพเจ้าที่จะก้าวเข้าสู่เส้นทางวิชาชีพแพทย์ เพื่อสร้างประโยชน์ให้แก่สังคมและประเทศชาติต่อไป</p>
             </div>
         </div>
     </div>
