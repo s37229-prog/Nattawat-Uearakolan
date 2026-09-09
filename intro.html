@@ -1,302 +1,336 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>คำนำ - TCAS Portfolio</title>
-<style>
-body { 
-    font-family: 'Sarabun', sans-serif, system-ui; 
-    background-color: #07131e; 
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px; 
-    margin: 0;
-}
-.container { 
-    max-width: 1100px; /* ปรับความกว้างหลักให้กว้างขึ้น */
-    margin: 0 auto; 
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
+    
+    <!-- นำเข้าฟอนต์ Google Fonts: Chakra Petch, Prompt, Sarabun -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Prompt:wght@400;500;600&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* 🏷️ Badge หัวข้อบนสุด */
-.top-badge {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-    padding: 8px 30px; /* เพิ่มขนาดพื้นที่ขอบ */
-    border-radius: 25px;
-    font-size: 15px; /* ขยายตัวหนังสือ */
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-}
+        body {
+            background: radial-gradient(circle at center, #0f3042 0%, #061520 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            font-family: 'Sarabun', sans-serif; /* ฟอนต์หลักสำหรับเนื้อหา */
+        }
 
-/* 💡 กลุ่มโลโก้และกล่องหัวข้อหลัก */
-.header-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
+        .portfolio-container {
+            width: 100%;
+            max-width: 1280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
 
-.logo-img {
-    width: 110px; /* ขยายขนาดโลโก้ */
-    height: 110px;
-    border-radius: 50%;
-    border: 3px solid #00d2ff;
-    box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
-    object-fit: cover;
-    background: #ffffff;
-}
+        /* Badge หัวข้อบนสุด - ใช้ Chakra Petch */
+        .top-badge {
+            font-family: 'Chakra Petch', sans-serif;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 229, 255, 0.5);
+            padding: 8px 36px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #00e5ff;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+        }
 
-.main-card {
-    flex: 1;
-    min-width: 340px;
-    background: #0f2333;
-    border: 1px solid #1c3b52;
-    border-radius: 20px;
-    padding: 25px 35px; /* เพิ่มพื้นที่ในการ์ด */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
+        .main-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            width: 100%;
+        }
 
-.main-card-info h2 {
-    margin: 0 0 10px 0;
-    font-size: 26px; /* ขยายชื่อหัวข้อ */
-    color: #ffffff;
-}
+        .circle-frame {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid #8fe3ff;
+            box-shadow: 0 0 20px rgba(143, 227, 255, 0.4), inset 0 0 12px rgba(143, 227, 255, 0.3);
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #0d2838;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.main-card-info p {
-    margin: 6px 0;
-    font-size: 15px; /* ขยายตัวอักษรรายละเอียด */
-    color: #b0c4de;
-}
+        .circle-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.main-card-info .author {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #8faec4;
-}
+        .center-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(0, 229, 255, 0.35);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+        }
 
-/* 🖼️ กรอบเส้นประ Add Photo ในการ์ดหลัก */
-.header-photo-box {
-    width: 130px; /* ขยายกล่องรูปภาพ */
-    height: 130px;
-    border: 2px dashed #3a6073;
-    border-radius: 14px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #6c8a9e;
-    font-size: 13px;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-}
+        .card-text-side {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-.header-photo-box:hover {
-    border-color: #00d2ff;
-    color: #00d2ff;
-}
+        /* หัวข้อแฟ้มสะสมงาน - Chakra Petch + ตัวหนังสือไล่สี Gradient */
+        .card-text-side h1 {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #8fe3ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+        }
 
-/* 🌟 แถบเมนูนำทาง (Navigation Menu) */
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 25px 0;
-    flex-wrap: wrap;
-}
+        .card-text-side h2 {
+            font-family: 'Prompt', sans-serif;
+            font-size: 21px;
+            font-weight: 500;
+            color: #d1ecf1;
+            line-height: 1.45;
+        }
 
-.nav-btn {
-    background-color: #0d1e2d;
-    color: #a0b2c6;
-    border: 1px solid #1a3348;
-    padding: 12px 26px; /* ขยายปุ่มกด */
-    text-decoration: none;
-    font-size: 15px; /* ขยายฟอนต์ปุ่ม */
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
+        .card-text-side .course {
+            font-family: 'Prompt', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #8fe3ff;
+        }
 
-.nav-btn:hover {
-    color: #ffffff;
-    border-color: #00d2ff;
-}
+        .card-text-side .author {
+            font-family: 'Sarabun', sans-serif;
+            font-size: 16px;
+            color: #a0c4d6;
+            margin-top: 6px;
+        }
 
-/* ปุ่มแท็บปัจจุบัน (Active) พร้อมแสงเรืองฟ้า */
-.nav-btn.active {
-    background-color: #0d2232;
-    color: #ffffff;
-    border: 2px solid #00d2ff;
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
-    font-weight: bold;
-}
+        .card-image-side {
+            flex: 0.9;
+            display: flex;
+            justify-content: center;
+        }
 
-/* 🟡 ปุ่มกลับหน้าแรกสีทอง */
-.btn-gold {
-    display: inline-block;
-    background: linear-gradient(180deg, #e5a93c 0%, #c68313 100%);
-    color: #000000;
-    font-weight: bold;
-    padding: 12px 36px; /* ขยายปุ่ม */
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: 16px; /* ขยายฟอนต์ */
-    margin: 10px 0 30px 0;
-    box-shadow: 0 4px 15px rgba(229, 169, 60, 0.3);
-    transition: all 0.3s ease;
-}
+        .image-square-box {
+            width: 100%;
+            max-width: 260px;
+            aspect-ratio: 1 / 1;
+            border: 2px dashed rgba(255, 255, 255, 0.45);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #b0bec5;
+        }
 
-.btn-gold:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(229, 169, 60, 0.4);
-}
+        .image-square-box:hover {
+            border-style: solid;
+            border-color: #00e5ff;
+            background: rgba(0, 229, 255, 0.12);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+        }
 
-/* 📄 การ์ดขาวแสดงเนื้อหาด้านล่าง */
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 24px;
-    margin-top: 15px;
-}
+        .image-square-box .plus-icon {
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
 
-.white-card {
-    background: #ffffff;
-    color: #1a202c;
-    border-radius: 18px;
-    padding: 30px; /* เพิ่มพื้นที่ภายในขอบ */
-    text-align: left;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.3);
-}
+        .image-square-box span {
+            font-family: 'Prompt', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+        }
 
-.white-card h3 {
-    margin-top: 0;
-    font-size: 20px; /* ขยายหัวข้อการ์ด */
-    color: #0f2333;
-    border-bottom: 2px solid #edf2f7;
-    padding-bottom: 10px;
-}
+        /* แถบปุ่มเมนู - ใช้ Prompt */
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            width: 100%;
+            margin-top: 10px;
+        }
 
-/* กรอบรูปภาพการ์ดขาวฝั่งซ้าย */
-.image-placeholder {
-    width: 100%;
-    height: 280px; /* ขยายความสูงรูปภาพ */
-    border: 2px dashed #cbd5e0;
-    border-radius: 12px;
-    background: #f7fafc;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #a0aec0;
-    font-size: 15px;
-}
+        .nav-btn {
+            font-family: 'Prompt', sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #e0f2fe;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
 
-.white-card p {
-    font-size: 16px; /* ขยายขนาดข้อความคำนำ */
-    line-height: 1.8;
-    color: #2d3748;
-    text-indent: 1.5em;
-    margin-bottom: 14px;
-}
+        .nav-btn.active, .nav-btn:hover {
+            background: rgba(0, 229, 255, 0.18);
+            border-color: #00e5ff;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+        }
 
-.signature {
-    text-align: right;
-    margin-top: 25px;
-    font-weight: bold;
-    color: #0f2333;
-    font-size: 15px; /* ขยายฟอนต์ลายเซ็น */
-}
+        /* ปุ่มทอง - ใช้ Prompt */
+        .gold-btn {
+            font-family: 'Prompt', sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(135deg, #f3d78c 0%, #b88e39 100%);
+            border: none;
+            color: #1a1000;
+            padding: 10px 45px;
+            border-radius: 25px;
+            font-size: 17px;
+            font-weight: 600;
+            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-/* 📱 Responsive สำหรับหน้าจอมือถือ */
-@media (max-width: 768px) {
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-    .main-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-}
-</style>
+        .gold-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
+        }
+
+        /* กล่องข้อมูลส่วนล่าง */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            color: #1e293b;
+            padding: 24px 28px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* หัวข้อในการ์ด - ใช้ Chakra Petch */
+        .info-card h3 {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #0f2b3c;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+        }
+
+        /* ข้อความเนื้อหา - ใช้ Sarabun ให้สอดคล้องและอ่านสบายตา */
+        .info-card p {
+            font-family: 'Sarabun', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 900px) {
+            .main-hero { flex-direction: column; }
+            .center-card { flex-direction: column; width: 100%; text-align: center; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
+    <div class="portfolio-container">
+        <div class="top-badge">TCAS PORTFOLIO</div>
 
-    <!-- Badge บนสุด -->
-    <div class="top-badge">TCAS PORTFOLIO</div>
-
-    <!-- ส่วนหัว: โลโก้ซ้าย + กล่องข้อมูลหลัก + โลโก้ขวา -->
-    <div class="header-group">
-        <img src="network_KKU.png" alt="โลโก้ซ้าย" class="logo-img">
-        
-        <div class="main-card">
-            <div class="main-card-info">
-                <h2>แฟ้มสะสมงาน (Portfolio)</h2>
-                <p>คณะแพทยศาสตร์ศิริราชพยาบาล<br>มหาวิทยาลัยมหิดล</p>
-                <p><strong>หลักสูตรแพทยศาสตรบัณฑิต</strong></p>
-                <div class="author">จัดทำโดย : ณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
+        <div class="main-hero">
+            <div class="circle-frame">
+                <img src="Mahidol_U.png" alt="Mahidol University Logo">
             </div>
-            
-            <div class="header-photo-box">
-                <span style="font-size: 22px; margin-bottom: 4px;">+</span>
-                <span>Add Photo</span>
+
+            <div class="center-card">
+                <div class="card-text-side">
+                    <h1>แฟ้มสะสมงาน (Portfolio)</h1>
+                    <h2>คณะแพทยศาสตร์ศิริราชพยาบาล<br>มหาวิทยาลัยมหิดล</h2>
+                    <div class="course">หลักสูตรแพทยศาสตรบัณฑิต</div>
+                    <div class="author">จัดทำโดย : ณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
+                </div>
+
+                <div class="card-image-side">
+                    <div class="image-square-box">
+                        <div class="plus-icon">+</div>
+                        <span>Add Photo</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <img src="network_KKU.png" alt="โลโก้ขวา" class="logo-img">
-    </div>
-
-    <!-- แถบปุ่มกด 5 ปุ่ม (ปุ่ม "คำนำ" มีแสงเรืองสีฟ้า) -->
-    <div class="nav-menu">
-        <a href="portfolio.html" class="nav-btn">PORTFOLIO</a>
-        <a href="preface.html" class="nav-btn active">คำนำ</a>
-        <a href="profile.html" class="nav-btn">ประวัติส่วนตัว</a>
-        <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
-        <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
-    </div>
-
-    <!-- ปุ่มกลับหน้าแรกสีทอง -->
-    <a href="index.html" class="btn-gold">กลับหน้าแรก</a>
-
-    <!-- โซนเนื้อหาการ์ดสีขาวด้านล่าง -->
-    <div class="content-grid">
-        
-        <!-- การ์ดฝั่งซ้าย: รูปภาพคำนำ -->
-        <div class="white-card">
-            <h3>รูปภาพประกอบคำนำ</h3>
-            <div class="image-placeholder">
-                <span style="font-size: 32px; margin-bottom: 8px;">📷</span>
-                <span>ใส่รูปภาพของคุณที่นี่</span>
+            <div class="circle-frame">
+                <img src="images.jpg" alt="Profile Picture">
             </div>
         </div>
 
-        <!-- การ์ดฝั่งขวา: ข้อความคำนำ -->
-        <div class="white-card">
-            <h3>คำนำ (PREFACE)</h3>
-            <p>แฟ้มสะสมงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ ความสนใจ ตลอดจนผลงานและกิจกรรมต่าง ๆ ของข้าพเจ้า นายณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
-            <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมงานเล่มนี้จะทำให้ทุกท่านได้เห็นถึงความตั้งใจและความมุ่งมั่นในการเรียนรู้เพื่อพัฒนาตนเองเข้าสู่การศึกษาต่อในระดับอุดมศึกษาต่อไป</p>
-            <p>ขอขอบพระคุณ คุณครู คุณพ่อ คุณแม่ และเพื่อน ๆ ที่ให้การสนับสนุนและเป็นกำลังใจที่ดีเสมอมา หากมีข้อผิดพลาดประการใด ข้าพเจ้าขออภัยมา ณ ที่นี้ด้วยครับ</p>
-            
-            <div class="signature">
-                ณัฐวรรธน์ เอื้อรักษ์โอฬาร<br>
-                <span style="font-weight: normal; color: #718096; font-size: 13px;">ผู้จัดทำ</span>
-            </div>
+        <div class="nav-tabs">
+            <a href="index.html" class="nav-btn active">PORTFOLIO</a>
+            <a href="intro.html" class="nav-btn">คำนำ</a>
+            <a href="profile.html" class="nav-btn">ประวัติส่วนตัว</a>
+            <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
+            <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
         </div>
 
-    </div>
+        <a href="index.html" class="gold-btn">กลับหน้าแรก</a>
 
-</div>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>ข้อมูลส่วนตัว (Personal Details)</h3>
+                <p><strong>ชื่อ:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร (Nattawat Uearakolan)</p>
+                <p><strong>เกิดวันที่:</strong> XX เดือน XXX พ.ศ. XXXX &nbsp;&nbsp;<strong>สัญชาติ:</strong> ไทย</p>
+                <p>มีความสนใจในด้านการแพทย์ ศิริราชพยาบาล และการช่วยเหลือเพื่อนมนุษย์</p>
+            </div>
+            <div class="info-card">
+                <h3>ผลงานเด่นและการเข้าร่วมกิจกรรม</h3>
+                <p>• ชนะเลิศอันดับ 1 ในการแข่งขันวิชาการ ประจำปี พ.ศ. XXXX</p>
+                <p>• ผ่านการอบรมค่ายทางวิทยาศาสตร์และทางการแพทย์</p>
+                <p>• จิตอาสาช่วยเหลือผู้ป่วยและงานบริการสังคม</p>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
