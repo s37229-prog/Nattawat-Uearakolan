@@ -175,529 +175,6 @@
         }
 
         .nav-btn {
-            display: inline-block;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            color: #e0f2fe;
-            padding: 10px 28px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .nav-btn.active, .nav-btn:hover {
-            background: rgba(0, 229, 255, 0.18);
-            border-color: #00e5ff;
-            color: #ffffff;
-            box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
-        }
-
-        .gold-btn {
-            display: inline-block;
-            text-decoration: none;
-            background: linear-gradient(135deg, #e6c875 0%, #a88038 100%);
-            border: none;
-            color: #1a1000;
-            padding: 10px 45px;
-            border-radius: 25px;
-            font-size: 17px;
-            font-weight: 600;
-            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .gold-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .info-card {
-            background: #ffffff;
-            color: #1e293b;
-            padding: 24px 28px;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .info-card h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #0f172a;
-            border-bottom: 2px solid #00e5ff;
-            padding-bottom: 6px;
-        }
-
-        .info-card p {
-            font-size: 15px;
-            line-height: 1.65;
-            color: #334155;
-            margin-bottom: 6px;
-        }
-
-        @media (max-width: 900px) {
-            .main-hero { flex-direction: column; }
-            .center-card { flex-direction: column; width: 100%; text-align: center; }
-            .info-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="portfolio-container">
-        <div class="top-badge">TCAS PORTFOLIO</div>
-
-        <div class="main-hero">
-            <div class="circle-frame">
-                <img src="Mahidol_U.png" alt="Mahidol University Logo">
-            </div>
-
-            <div class="center-card">
-                <div class="card-text-side">
-                    <h1>แฟ้มสะสมงาน (Portfolio)</h1>
-                    <h2>คณะแพทยศาสตร์ศิริราชพยาบาล<br>มหาวิทยาลัยมหิดล</h2>
-                    <div class="course">หลักสูตรแพทยศาสตรบัณฑิต</div>
-                    <div class="author">จัดทำโดย : ณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
-                </div>
-
-                <div class="card-image-side">
-                    <div class="image-square-box">
-                        <div class="plus-icon">+</div>
-                        <span>Add Photo</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="circle-frame">
-                <img src="images.jpg" alt="Profile Picture">
-            </div>
-        </div>
-
-        <!-- แท็บการนำทาง (ตั้งปุ่ม PORTFOLIO เรืองแสง active) -->
-        <div class="nav-tabs">
-            <a href="index.html" class="nav-btn active">PORTFOLIO</a>
-            <a href="intro.html" class="nav-btn">คำนำ</a>
-            <a href="profile.html" class="nav-btn">ประวัติส่วนตัว</a>
-            <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
-            <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
-        </div>
-
-        <a href="index.html" class="gold-btn">กลับหน้าแรก</a>
-
-        <!-- เนื้อหาการ์ดของหน้า PORTFOLIO -->
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>ข้อมูลส่วนตัว (Personal Details):</h3>
-                <p><strong>ชื่อ:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร (Nattawat Uearakolan)</p>
-                <p><strong>เกิดวันที่:</strong> XX เดือน XXX พ.ศ. XXXX &nbsp;&nbsp;<strong>สัญชาติ:</strong> ไทย</p>
-                <p>มีความสนใจในด้านการแพทย์ ศิริราชพยาบาล และการช่วยเหลือเพื่อนมนุษย์</p>
-            </div>
-            <div class="info-card">
-                <h3>ผลงานเด่นและการเข้าร่วมกิจกรรม:</h3>
-                <p>• ชนะเลิศอันดับ 1 ในการแข่งขันวิชาการ ประจำปี พ.ศ. XXXX</p>
-                <p>• ผ่านการอบรมค่ายทางวิทยาศาสตร์และทา<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Prompt', 'Sarabun', sans-serif;
-        }
-
-        body {
-            background: radial-gradient(circle at center, #0f3042 0%, #061520 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .portfolio-container {
-            width: 100%;
-            max-width: 1280px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .top-badge {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(0, 229, 255, 0.4);
-            padding: 8px 32px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            color: #e0f7fa;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
-        }
-
-        .main-hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            width: 100%;
-        }
-
-        .circle-frame {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 3px solid #8fe3ff;
-            box-shadow: 0 0 20px rgba(143, 227, 255, 0.4), inset 0 0 12px rgba(143, 227, 255, 0.3);
-            overflow: hidden;
-            flex-shrink: 0;
-            background: #0d2838;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .circle-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .center-card {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1.5px solid rgba(0, 229, 255, 0.35);
-            border-radius: 24px;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            gap: 35px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
-        }
-
-        .card-text-side {
-            flex: 1.2;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .card-text-side h1 {
-            font-size: 32px;
-            font-weight: 600;
-            color: #ffffff;
-            line-height: 1.2;
-        }
-
-        .card-text-side h2 {
-            font-size: 21px;
-            font-weight: 400;
-            color: #d1ecf1;
-            line-height: 1.45;
-        }
-
-        .card-text-side .course {
-            font-size: 21px;
-            font-weight: 500;
-            color: #ffffff;
-        }
-
-        .card-text-side .author {
-            font-size: 16px;
-            color: #a0c4d6;
-            margin-top: 6px;
-        }
-
-        .card-image-side {
-            flex: 0.9;
-            display: flex;
-            justify-content: center;
-        }
-
-        .image-square-box {
-            width: 100%;
-            max-width: 260px;
-            aspect-ratio: 1 / 1;
-            border: 2px dashed rgba(255, 255, 255, 0.45);
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: #b0bec5;
-        }
-
-        .image-square-box:hover {
-            border-style: solid;
-            border-color: #00e5ff;
-            background: rgba(0, 229, 255, 0.12);
-            color: #ffffff;
-            box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
-        }
-
-        .image-square-box .plus-icon {
-            font-size: 48px;
-            font-weight: 300;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .image-square-box span {
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        .nav-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .nav-btn {
-            display: inline-block;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            color: #e0f2fe;
-            padding: 10px 28px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .nav-btn.active, .nav-btn:hover {
-            background: rgba(0, 229, 255, 0.18);
-            border-color: #00e5ff;
-            color: #ffffff;
-            box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
-        }
-
-        .gold-btn {
-            display: inline-block;
-            text-decoration: none;
-            background: linear-gradient(135deg, #e6c875 0%, #a88038 100%);
-            border: none;
-            color: #1a1000;
-            padding: 10px 45px;
-            border-radius: 25px;
-            font-size: 17px;
-            font-weight: 600;
-            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .gold-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
-        }
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Prompt', 'Sarabun', sans-serif;
-        }
-
-        body {
-            background: radial-gradient(circle at center, #0f3042 0%, #061520 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .portfolio-container {
-            width: 100%;
-            max-width: 1280px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .top-badge {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(0, 229, 255, 0.4);
-            padding: 8px 32px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            color: #e0f7fa;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
-        }
-
-        .main-hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            width: 100%;
-        }
-
-        .circle-frame {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 3px solid #8fe3ff;
-            box-shadow: 0 0 20px rgba(143, 227, 255, 0.4), inset 0 0 12px rgba(143, 227, 255, 0.3);
-            overflow: hidden;
-            flex-shrink: 0;
-            background: #0d2838;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .circle-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .center-card {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1.5px solid rgba(0, 229, 255, 0.35);
-            border-radius: 24px;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            gap: 35px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
-        }
-
-        .card-text-side {
-            flex: 1.2;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .card-text-side h1 {
-            font-size: 32px;
-            font-weight: 600;
-            color: #ffffff;
-            line-height: 1.2;
-        }
-
-        .card-text-side h2 {
-            font-size: 21px;
-            font-weight: 400;
-            color: #d1ecf1;
-            line-height: 1.45;
-        }
-
-        .card-text-side .course {
-            font-size: 21px;
-            font-weight: 500;
-            color: #ffffff;
-        }
-
-        .card-text-side .author {
-            font-size: 16px;
-            color: #a0c4d6;
-            margin-top: 6px;
-        }
-
-        .card-image-side {
-            flex: 0.9;
-            display: flex;
-            justify-content: center;
-        }
-
-        .image-square-box {
-            width: 100%;
-            max-width: 260px;
-            aspect-ratio: 1 / 1;
-            border: 2px dashed rgba(255, 255, 255, 0.45);
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: #b0bec5;
-        }
-
-        .image-square-box:hover {
-            border-style: solid;
-            border-color: #00e5ff;
-            background: rgba(0, 229, 255, 0.12);
-            color: #ffffff;
-            box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
-        }
-
-        .image-square-box .plus-icon {
-            font-size: 48px;
-            font-weight: 300;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .image-square-box span {
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        .nav-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .nav-btn {
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.22);
             color: #e0f2fe;
@@ -745,11 +222,11 @@
 
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.4s ease;
+            animation: fadeIn 0.3s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -833,16 +310,16 @@
             </div>
         </div>
 
-        <!-- แถบเมนูนำทาง (ใช้ JavaScript สลับเนื้อหา สัมผัสได้ลื่นไหล ไม่รีโหลดหน้า) -->
+        <!-- แถบเมนูนำทาง (ระบุ type="button" ป้องกันการส่งค่า/โหลดหน้าซ้ำ) -->
         <div class="nav-tabs">
-            <button class="nav-btn active" onclick="switchTab('portfolio', this)">PORTFOLIO</button>
-            <button class="nav-btn" onclick="switchTab('intro', this)">คำนำ</button>
-            <button class="nav-btn" onclick="switchTab('profile', this)">ประวัติส่วนตัว</button>
-            <button class="nav-btn" onclick="switchTab('activities', this)">ผลงานและกิจกรรม</button>
-            <button class="nav-btn" onclick="switchTab('contact', this)">ช่องทางการติดต่อ</button>
+            <button type="button" class="nav-btn active" onclick="switchTab('portfolio', this)">PORTFOLIO</button>
+            <button type="button" class="nav-btn" onclick="switchTab('intro', this)">คำนำ</button>
+            <button type="button" class="nav-btn" onclick="switchTab('profile', this)">ประวัติส่วนตัว</button>
+            <button type="button" class="nav-btn" onclick="switchTab('activities', this)">ผลงานและกิจกรรม</button>
+            <button type="button" class="nav-btn" onclick="switchTab('contact', this)">ช่องทางการติดต่อ</button>
         </div>
 
-        <button class="gold-btn" onclick="switchTab('portfolio', document.querySelectorAll('.nav-btn')[0])">กลับหน้าแรก</button>
+        <button type="button" class="gold-btn" onclick="switchTab('portfolio', document.querySelectorAll('.nav-btn')[0])">กลับหน้าแรก</button>
 
         <!-- 1. เนื้อหา PORTFOLIO -->
         <div id="portfolio" class="tab-content active">
@@ -911,9 +388,16 @@
 
     </div>
 
-    <!-- ฟังก์ชันสลับแท็บโดยไม่ต้องรีโหลดหน้า -->
+    <!-- สคริปต์สลับแท็บพร้อมป้องกันการโหลดซ้ำ -->
     <script>
         function switchTab(tabId, btnElement) {
+            const targetTab = document.getElementById(tabId);
+            
+            // หากแท็บนั้นเปิดอยู่อยู่แล้ว ให้ยกเลิกการทำงาน (อยู่หน้าเดิม ไม่กระพริบ ไม่โหลดซ้ำ)
+            if (targetTab && targetTab.classList.contains('active')) {
+                return;
+            }
+
             // ซ่อนเนื้อหาทั้งหมด
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
@@ -923,9 +407,11 @@
             buttons.forEach(btn => btn.classList.remove('active'));
 
             // แสดงเนื้อหาแท็บที่เลือก
-            document.getElementById(tabId).classList.add('active');
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
 
-            // เพิ่มสถานะ active ให้ปุ่มที่กด
+            // ไฮไลต์ปุ่มที่เลือก
             if (btnElement) {
                 btnElement.classList.add('active');
             }
