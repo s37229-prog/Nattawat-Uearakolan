@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
-    <!-- นำเข้าฟอนต์ Google Font (Sarabun & Prompt) -->
+    <!-- นำเข้าฟอนต์ Google Font (Prompt & Sarabun) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -24,47 +24,48 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
 
+        /* ขยายความกว้างสูงสุดของคอนเทนเนอร์เป็น 1280px */
         .portfolio-container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1280px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 25px;
+            gap: 30px;
         }
 
-        /* Badge หัวข้อบนสุด */
+        /* Badge TCAS PORTFOLIO ใหญ่ขึ้น */
         .top-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(0, 229, 255, 0.4);
-            padding: 6px 24px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 1px;
+            padding: 8px 32px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
             color: #e0f7fa;
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
         }
 
-        /* ส่วนจัดวางภาพวงกลมซ้าย-ขวา และการ์ดตรงกลาง */
+        /* ส่วนจัดวางภาพวงกลมซ้าย-ขวา และการ์ดกลาง */
         .main-hero {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             width: 100%;
         }
 
-        /* วงกลมโลโก้ / โปรไฟล์ */
+        /* ขยายวงกลมโลโก้ / โปรไฟล์ เป็น 160px */
         .circle-frame {
-            width: 130px;
-            height: 130px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 2px solid #8fe3ff;
-            box-shadow: 0 0 15px rgba(143, 227, 255, 0.4), inset 0 0 10px rgba(143, 227, 255, 0.3);
+            border: 3px solid #8fe3ff;
+            box-shadow: 0 0 20px rgba(143, 227, 255, 0.4), inset 0 0 12px rgba(143, 227, 255, 0.3);
             overflow: hidden;
             flex-shrink: 0;
             background: #0d2838;
@@ -79,67 +80,68 @@
             object-fit: cover;
         }
 
-        /* การ์ดแก้วตรงกลาง (Glassmorphism) */
+        /* ขยายการ์ดแก้วตรงกลาง และเพิ่ม Padding เป็น 40px */
         .center-card {
             flex: 1;
             background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 229, 255, 0.3);
-            border-radius: 20px;
-            padding: 30px;
+            border: 1.5px solid rgba(0, 229, 255, 0.35);
+            border-radius: 24px;
+            padding: 40px;
             display: flex;
             align-items: center;
-            gap: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            gap: 35px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
         }
 
-        /* ข้อความฝั่งซ้ายในการ์ด */
+        /* ข้อความฝั่งซ้ายใหญ่ขึ้น */
         .card-text-side {
             flex: 1.2;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .card-text-side h1 {
-            font-size: 26px;
+            font-size: 32px;
             font-weight: 600;
             color: #ffffff;
+            line-height: 1.2;
         }
 
         .card-text-side h2 {
-            font-size: 18px;
+            font-size: 21px;
             font-weight: 400;
             color: #d1ecf1;
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         .card-text-side .course {
-            font-size: 18px;
+            font-size: 21px;
             font-weight: 500;
             color: #ffffff;
         }
 
         .card-text-side .author {
-            font-size: 14px;
+            font-size: 16px;
             color: #a0c4d6;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
-        /* ช่องใส่รูปภาพสี่เหลี่ยมจัตุรัสฝั่งขวาในการ์ด */
+        /* ช่องใส่รูปภาพสี่เหลี่ยมจัตุรัสขยายใหญ่เป็น 260px */
         .card-image-side {
-            flex: 0.8;
+            flex: 0.9;
             display: flex;
             justify-content: center;
         }
 
         .image-square-box {
             width: 100%;
-            max-width: 200px;
+            max-width: 260px;
             aspect-ratio: 1 / 1;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            border-radius: 12px;
+            border: 2px dashed rgba(255, 255, 255, 0.45);
+            border-radius: 16px;
             background: rgba(255, 255, 255, 0.05);
             display: flex;
             flex-direction: column;
@@ -151,75 +153,78 @@
         }
 
         .image-square-box:hover {
+            border-style: solid;
             border-color: #00e5ff;
-            background: rgba(0, 229, 255, 0.1);
+            background: rgba(0, 229, 255, 0.12);
             color: #ffffff;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
         }
 
         .image-square-box .plus-icon {
-            font-size: 36px;
+            font-size: 48px;
             font-weight: 300;
             line-height: 1;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .image-square-box span {
-            font-size: 13px;
+            font-size: 15px;
+            font-weight: 500;
         }
 
-        /* เมนูแท็บแถบปุ่ม */
+        /* เมนูแถบปุ่มใหญ่ขึ้น */
         .nav-tabs {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 14px;
             width: 100%;
             margin-top: 10px;
         }
 
         .nav-btn {
             background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.22);
             color: #e0f2fe;
-            padding: 8px 22px;
-            border-radius: 25px;
-            font-size: 14px;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .nav-btn.active, .nav-btn:hover {
-            background: rgba(0, 229, 255, 0.15);
+            background: rgba(0, 229, 255, 0.18);
             border-color: #00e5ff;
             color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+            box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
         }
 
-        /* ปุ่มทอง "กลับหน้าแรก" */
+        /* ปุ่มทอง "กลับหน้าแรก" ใหญ่ขึ้น */
         .gold-btn {
             background: linear-gradient(135deg, #e6c875 0%, #a88038 100%);
             border: none;
             color: #1a1000;
-            padding: 8px 36px;
-            border-radius: 20px;
-            font-size: 15px;
+            padding: 10px 45px;
+            border-radius: 25px;
+            font-size: 17px;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .gold-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
         }
 
-        /* ส่วนกล่องข้อมูลสีขาวด้านล่าง */
+        /* กล่องข้อมูลด้านล่างใหญ่ขึ้น */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
             width: 100%;
             margin-top: 10px;
         }
@@ -227,32 +232,34 @@
         .info-card {
             background: #ffffff;
             color: #1e293b;
-            padding: 20px 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 24px 28px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
         }
 
         .info-card h3 {
-            font-size: 15px;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #0f172a;
         }
 
         .info-card p {
-            font-size: 13px;
-            line-height: 1.6;
+            font-size: 15px;
+            line-height: 1.65;
             color: #334155;
+            margin-bottom: 6px;
         }
 
-        /* รองรับการแสดงผลบนหน้าจอสมาร์ทโฟน */
-        @media (max-width: 850px) {
+        /* Responsive สำหรับมือถือ */
+        @media (max-width: 900px) {
             .main-hero {
                 flex-direction: column;
             }
             .center-card {
                 flex-direction: column;
                 width: 100%;
+                text-align: center;
             }
             .info-grid {
                 grid-template-columns: 1fr;
@@ -268,12 +275,12 @@
 
         <!-- ส่วนกลาง 3 คอลัมน์ -->
         <div class="main-hero">
-            <!-- ภาพวงกลมซ้าย (โลโก้มหาวิทยาลัย) -->
+            <!-- ภาพวงกลมซ้าย (ตรามหาวิทยาลัย) -->
             <div class="circle-frame">
-                <img src="https://via.placeholder.com/130?text=Logo" alt="University Logo">
+                <img src="https://via.placeholder.com/160?text=Logo" alt="University Logo">
             </div>
 
-            <!-- การ์ดกลาง (ข้อความซ้าย + กรอบรูปสี่เหลี่ยมจัตุรัสขวา) -->
+            <!-- การ์ดกลาง (ข้อความซ้าย + กรอบรูปใหญ่ขวา) -->
             <div class="center-card">
                 <div class="card-text-side">
                     <h1>แฟ้มสะสมงาน (Portfolio)</h1>
@@ -290,9 +297,9 @@
                 </div>
             </div>
 
-            <!-- ภาพวงกลมขวา (รูปนักเรียน/โปรไฟล์) -->
+            <!-- ภาพวงกลมขวา (รูปโปรไฟล์) -->
             <div class="circle-frame">
-                <img src="https://via.placeholder.com/130?text=Profile" alt="Profile Picture">
+                <img src="https://via.placeholder.com/160?text=Profile" alt="Profile Picture">
             </div>
         </div>
 
