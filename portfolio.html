@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
-    <!-- นำเข้าฟอนต์ Google Font (Prompt & Sarabun) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,7 +36,6 @@
             gap: 30px;
         }
 
-        /* Badge TCAS PORTFOLIO */
         .top-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(0, 229, 255, 0.4);
@@ -49,7 +48,6 @@
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
         }
 
-        /* ส่วนจัดวางภาพวงกลมซ้าย-ขวา และการ์ดกลาง */
         .main-hero {
             display: flex;
             align-items: center;
@@ -58,7 +56,6 @@
             width: 100%;
         }
 
-        /* วงกลมโลโก้ / โปรไฟล์ */
         .circle-frame {
             width: 160px;
             height: 160px;
@@ -79,7 +76,6 @@
             object-fit: cover;
         }
 
-        /* การ์ดแก้วตรงกลาง */
         .center-card {
             flex: 1;
             background: rgba(255, 255, 255, 0.04);
@@ -94,7 +90,6 @@
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
         }
 
-        /* ข้อความฝั่งซ้าย */
         .card-text-side {
             flex: 1.2;
             display: flex;
@@ -128,7 +123,6 @@
             margin-top: 6px;
         }
 
-        /* ช่องใส่รูปภาพสี่เหลี่ยมจัตุรัส */
         .card-image-side {
             flex: 0.9;
             display: flex;
@@ -171,7 +165,7 @@
             font-weight: 500;
         }
 
-        /* เมนูแถบปุ่ม */
+        /* ปรับแต่งเมนูแท็บแบบ Hyperlink <a> */
         .nav-tabs {
             display: flex;
             flex-wrap: wrap;
@@ -182,6 +176,8 @@
         }
 
         .nav-btn {
+            display: inline-block;
+            text-decoration: none;
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.22);
             color: #e0f2fe;
@@ -189,8 +185,8 @@
             border-radius: 30px;
             font-size: 16px;
             font-weight: 500;
-            cursor: pointer;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .nav-btn.active, .nav-btn:hover {
@@ -200,8 +196,10 @@
             box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
         }
 
-        /* ปุ่มทอง "กลับหน้าแรก" */
+        /* ปุ่มทองกลับหน้าแรก แบบ Hyperlink <a> */
         .gold-btn {
+            display: inline-block;
+            text-decoration: none;
             background: linear-gradient(135deg, #e6c875 0%, #a88038 100%);
             border: none;
             color: #1a1000;
@@ -209,7 +207,6 @@
             border-radius: 25px;
             font-size: 17px;
             font-weight: 600;
-            cursor: pointer;
             box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -219,32 +216,12 @@
             box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
         }
 
-        /* การจัดการเนื้อหาแต่ละแท็บ */
-        .tab-content-container {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .tab-content {
-            display: none; /* ซ่อนแท็บที่ไม่ได้เลือกไว้เป็นค่าเริ่มต้น */
-            animation: fadeIn 0.4s ease-in-out forwards;
-        }
-
-        .tab-content.active {
-            display: block; /* แสดงแท็บที่ถูกเลือก */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* โครงสร้างการ์ดข้อมูล */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
             width: 100%;
+            margin-top: 10px;
         }
 
         .info-card {
@@ -273,39 +250,24 @@
             margin-bottom: 6px;
         }
 
-        /* Responsive สำหรับมือถือ */
         @media (max-width: 900px) {
-            .main-hero {
-                flex-direction: column;
-            }
-            .center-card {
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-            }
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            .info-card.full-width {
-                grid-column: span 1;
-            }
+            .main-hero { flex-direction: column; }
+            .center-card { flex-direction: column; width: 100%; text-align: center; }
+            .info-grid { grid-template-columns: 1fr; }
+            .info-card.full-width { grid-column: span 1; }
         }
     </style>
 </head>
 <body>
 
     <div class="portfolio-container">
-        <!-- หัวข้อหลัก -->
         <div class="top-badge">TCAS PORTFOLIO</div>
 
-        <!-- ส่วนกลาง 3 คอลัมน์ -->
         <div class="main-hero">
-            <!-- ภาพวงกลมซ้าย (โลโก้มหาวิทยาลัยมหิดล) -->
             <div class="circle-frame">
                 <img src="Mahidol_U.png" alt="Mahidol University Logo">
             </div>
 
-            <!-- การ์ดกลาง (ข้อความซ้าย + กรอบรูปใหญ่ขวา) -->
             <div class="center-card">
                 <div class="card-text-side">
                     <h1>แฟ้มสะสมงาน (Portfolio)</h1>
@@ -322,142 +284,38 @@
                 </div>
             </div>
 
-            <!-- ภาพวงกลมขวา (รูปโปรไฟล์) -->
             <div class="circle-frame">
                 <img src="images.jpg" alt="Profile Picture">
             </div>
         </div>
 
-        <!-- เมนูแถบปุ่ม (ใส่ data-tab เพื่อเชื่อมโยงกับเนื้อหา) -->
+        <!-- แท็บการนำทางเชื่อมโยงไปยังไฟล์อื่น -->
         <div class="nav-tabs">
-            <button class="nav-btn active" data-tab="tab-portfolio">PORTFOLIO</button>
-            <button class="nav-btn" data-tab="tab-intro">คำนำ</button>
-            <button class="nav-btn" data-tab="tab-profile">ประวัติส่วนตัว</button>
-            <button class="nav-btn" data-tab="tab-activities">ผลงานและกิจกรรม</button>
-            <button class="nav-btn" data-tab="tab-contact">ช่องทางการติดต่อ</button>
+            <a href="index.html" class="nav-btn active">PORTFOLIO</a>
+            <a href="intro.html" class="nav-btn">คำนำ</a>
+            <a href="profile.html" class="nav-btn">ประวัติส่วนตัว</a>
+            <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
+            <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
         </div>
 
-        <!-- ปุ่มกลับหน้าแรก -->
-        <button class="gold-btn" id="home-btn">กลับหน้าแรก</button>
+        <a href="index.html" class="gold-btn">กลับหน้าแรก</a>
 
-        <!-- คอนเทนเนอร์รวมเนื้อหาแต่ละแท็บ -->
-        <div class="tab-content-container">
-
-            <!-- แท็บ 1: PORTFOLIO (หน้าแรก/ค่าเริ่มต้น) -->
-            <div class="tab-content active" id="tab-portfolio">
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>ข้อมูลส่วนตัว (Personal Details):</h3>
-                        <p><strong>ชื่อ:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร (Nattawat Uearakolan)</p>
-                        <p><strong>เกิดวันที่:</strong> XX เดือน XXX พ.ศ. XXXX &nbsp;&nbsp;<strong>สัญชาติ:</strong> ไทย</p>
-                        <p>มีความสนใจในด้านการแพทย์ ศิริราชพยาบาล และการช่วยเหลือเพื่อนมนุษย์</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>ผลงานเด่นและการเข้าร่วมกิจกรรม:</h3>
-                        <p>• ชนะเลิศอันดับ 1 ในการแข่งขันวิชาการ ประจำปี พ.ศ. XXXX</p>
-                        <p>• ผ่านการอบรมค่ายทางวิทยาศาสตร์และทางการแพทย์</p>
-                        <p>• จิตอาสาช่วยเหลือผู้ป่วยและงานบริการสังคม</p>
-                    </div>
-                </div>
+        <!-- เนื้อหาเฉพาะของหน้า PORTFOLIO -->
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>ข้อมูลส่วนตัว (Personal Details):</h3>
+                <p><strong>ชื่อ:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร (Nattawat Uearakolan)</p>
+                <p><strong>เกิดวันที่:</strong> XX เดือน XXX พ.ศ. XXXX &nbsp;&nbsp;<strong>สัญชาติ:</strong> ไทย</p>
+                <p>มีความสนใจในด้านการแพทย์ ศิริราชพยาบาล และการช่วยเหลือเพื่อนมนุษย์</p>
             </div>
-
-            <!-- แท็บ 2: คำนำ -->
-            <div class="tab-content" id="tab-intro">
-                <div class="info-grid">
-                    <div class="info-card full-width">
-                        <h3>คำนำ (Preface)</h3>
-                        <p>แฟ้มสะสมงาน (Portfolio) เล่มนี้จัดทำขึ้นเพื่อนำเสนอข้อมูลประวัติส่วนตัว ประวัติการศึกษา ความรู้ ความสามารถ ทักษะ และการเข้าร่วมกิจกรรมต่างๆ ตลอดจนรางวัลผลงานที่มีความภาคภูมิใจของข้าพเจ้า</p>
-                        <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่าแฟ้มสะสมงานเล่มนี้ จะทำให้คณะกรรมการได้เห็นถึงความตั้งใจจริง ความมุ่งมั่น และความพร้อมของข้าพเจ้าในการเข้าศึกษาต่อในหลักสูตรแพทยศาสตรบัณฑิต คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล</p>
-                    </div>
-                </div>
+            <div class="info-card">
+                <h3>ผลงานเด่นและการเข้าร่วมกิจกรรม:</h3>
+                <p>• ชนะเลิศอันดับ 1 ในการแข่งขันวิชาการ ประจำปี พ.ศ. XXXX</p>
+                <p>• ผ่านการอบรมค่ายทางวิทยาศาสตร์และทางการแพทย์</p>
+                <p>• จิตอาสาช่วยเหลือผู้ป่วยและงานบริการสังคม</p>
             </div>
-
-            <!-- แท็บ 3: ประวัติส่วนตัว -->
-            <div class="tab-content" id="tab-profile">
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>ข้อมูลทั่วไป</h3>
-                        <p><strong>ชื่อ-นามสกุล:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
-                        <p><strong>แผนการเรียน:</strong> วิทยาศาสตร์ - คณิตศาสตร์</p>
-                        <p><strong>โรงเรียน:</strong> [ระบุชื่อโรงเรียนของคุณ]</p>
-                        <p><strong>เกรดเฉลี่ยสะสม (GPAX):</strong> X.XX</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>ทักษะและความสามารถ</h3>
-                        <p>• ทักษะทางด้านวิทยาศาสตร์และการคิดวิเคราะห์</p>
-                        <p>• ทักษะการสื่อสารภาษาอังกฤษ</p>
-                        <p>• ความสามารถในการทำงานร่วมกับผู้อื่นและการทำงานเป็นทีม</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- แท็บ 4: ผลงานและกิจกรรม -->
-            <div class="tab-content" id="tab-activities">
-                <div class="info-grid">
-                    <div class="info-card full-width">
-                        <h3>ผลงาน กิจกรรม และเกียรติบัตร (Activities & Certificates)</h3>
-                        <p>• <strong>กิจกรรมที่ 1:</strong> เข้าร่วมค่ายเปิดบ้านหมอศิริราช ประจำปี พ.ศ. XXXX</p>
-                        <p>• <strong>กิจกรรมที่ 2:</strong> เข้าร่วมโครงการฝึกงานและศึกษาดูงาน ณ โรงพยาบาล XXXX</p>
-                        <p>• <strong>กิจกรรมที่ 3:</strong> เข้าร่วมแข่งขันตอบปัญหาชีววิทยาและวิทยาศาสตร์การแพทย์</p>
-                        <p>• <strong>กิจกรรมจิตอาสา:</strong> เข้าร่วมโครงการบริจาคสิ่งของและจัดกิจกรรมนันทนาการ</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- แท็บ 5: ช่องทางการติดต่อ -->
-            <div class="tab-content" id="tab-contact">
-                <div class="info-grid">
-                    <div class="info-card full-width">
-                        <h3>ช่องทางการติดต่อ (Contact Information)</h3>
-                        <p><strong>เบอร์โทรศัพท์:</strong> 08X-XXX-XXXX</p>
-                        <p><strong>อีเมล (Email):</strong> nattawat.u@example.com</p>
-                        <p><strong>LINE ID:</strong> @nattawat_u</p>
-                        <p><strong>Facebook / IG:</strong> Nattawat Uearakolan</p>
-                        <p><strong>ที่อยู่:</strong> [ระบุที่อยู่ของคุณ]</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
-
-    <!-- JavaScript สำหรับสลับแท็บเมนู -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navButtons = document.querySelectorAll('.nav-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-            const homeBtn = document.getElementById('home-btn');
-
-            // ฟังก์ชันสลับแท็บ
-            function switchTab(targetTabId) {
-                // เอา class active ออกจากปุ่มและเนื้อหาทั้งหมด
-                navButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-
-                // ใส่ class active ให้กับปุ่มและแท็บเนื้อหาที่ถูกเลือก
-                const activeBtn = document.querySelector(`.nav-btn[data-tab="${targetTabId}"]`);
-                const activeContent = document.getElementById(targetTabId);
-
-                if (activeBtn) activeBtn.classList.add('active');
-                if (activeContent) activeContent.classList.add('active');
-            }
-
-            // เพิ่ม Event Listener ให้กับปุ่มแท็บทุกปุ่ม
-            navButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const tabId = this.getAttribute('data-tab');
-                    switchTab(tabId);
-                });
-            });
-
-            // เมื่อกดปุ่มทอง "กลับหน้าแรก" ให้เด้งกลับมาหน้า PORTFOLIO
-            if (homeBtn) {
-                homeBtn.addEventListener('click', function() {
-                    switchTab('tab-portfolio');
-                });
-            }
-        });
-    </script>
 
 </body>
 </html>
