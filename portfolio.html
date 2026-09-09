@@ -222,11 +222,11 @@
 
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.35s ease-in-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -264,7 +264,7 @@
             font-size: 16px;
             line-height: 1.8;
             color: #334155;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .info-card p.indent {
@@ -310,19 +310,19 @@
             </div>
         </div>
 
-        <!-- แถบเมนูนำทาง (ระบุ type="button" ป้องกันการส่งค่า/โหลดหน้าซ้ำ) -->
+        <!-- แถบเมนูนำทาง (ระบุ target ผ่าน data-target เพื่อความเสถียร) -->
         <div class="nav-tabs">
-            <button type="button" class="nav-btn active" onclick="switchTab('portfolio', this)">PORTFOLIO</button>
-            <button type="button" class="nav-btn" onclick="switchTab('intro', this)">คำนำ</button>
-            <button type="button" class="nav-btn" onclick="switchTab('profile', this)">ประวัติส่วนตัว</button>
-            <button type="button" class="nav-btn" onclick="switchTab('activities', this)">ผลงานและกิจกรรม</button>
-            <button type="button" class="nav-btn" onclick="switchTab('contact', this)">ช่องทางการติดต่อ</button>
+            <button type="button" class="nav-btn active" data-target="tab-portfolio">PORTFOLIO</button>
+            <button type="button" class="nav-btn" data-target="tab-intro">คำนำ</button>
+            <button type="button" class="nav-btn" data-target="tab-profile">ประวัติส่วนตัว</button>
+            <button type="button" class="nav-btn" data-target="tab-activities">ผลงานและกิจกรรม</button>
+            <button type="button" class="nav-btn" data-target="tab-contact">ช่องทางการติดต่อ</button>
         </div>
 
-        <button type="button" class="gold-btn" onclick="switchTab('portfolio', document.querySelectorAll('.nav-btn')[0])">กลับหน้าแรก</button>
+        <button type="button" class="gold-btn" data-target="tab-portfolio">กลับหน้าแรก</button>
 
-        <!-- 1. เนื้อหา PORTFOLIO -->
-        <div id="portfolio" class="tab-content active">
+        <!-- 1. แท็บ PORTFOLIO -->
+        <div id="tab-portfolio" class="tab-content active">
             <div class="info-grid">
                 <div class="info-card">
                     <h3>ข้อมูลส่วนตัว (Personal Details)</h3>
@@ -339,8 +339,8 @@
             </div>
         </div>
 
-        <!-- 2. เนื้อหา คำนำ -->
-        <div id="intro" class="tab-content">
+        <!-- 2. แท็บ คำนำ -->
+        <div id="tab-intro" class="tab-content">
             <div class="info-grid">
                 <div class="info-card full-width">
                     <h3>คำนำ (Preface)</h3>
@@ -350,37 +350,39 @@
             </div>
         </div>
 
-        <!-- 3. เนื้อหา ประวัติส่วนตัว -->
-        <div id="profile" class="tab-content">
+        <!-- 3. แท็บ ประวัติส่วนตัว -->
+        <div id="tab-profile" class="tab-content">
             <div class="info-grid">
                 <div class="info-card full-width">
                     <h3>ประวัติส่วนตัว (Personal Profile)</h3>
                     <p><strong>ชื่อ-นามสกุล:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร (Nattawat Uearakolan)</p>
-                    <p><strong>การศึกษา:</strong> มัธยมศึกษาตอนปลาย สายวิทยาศาสตร์-คณิตศาสตร์</p>
-                    <p><strong>ความสามารถพิเศษ:</strong> การคิดวิเคราะห์เชิงวิทยาศาสตร์, การทำงานร่วมกับผู้อื่น, ทักษะการสื่อสาร</p>
+                    <p><strong>แผนการเรียน:</strong> มัธยมศึกษาตอนปลาย สายวิทยาศาสตร์-คณิตศาสตร์</p>
+                    <p><strong>ความสามารถพิเศษ:</strong> การคิดวิเคราะห์เชิงวิทยาศาสตร์, การทำงานร่วมกับผู้อื่น, ทักษะการสื่อสารภาษาอังกฤษ</p>
+                    <p><strong>คติประจำใจ:</strong> "ความพยายามและมุ่งมั่น คือก้าวแรกสู่ความสำเร็จในการเป็นแพทย์ผู้ให้"</p>
                 </div>
             </div>
         </div>
 
-        <!-- 4. เนื้อหา ผลงานและกิจกรรม -->
-        <div id="activities" class="tab-content">
+        <!-- 4. แท็บ ผลงานและกิจกรรม -->
+        <div id="tab-activities" class="tab-content">
             <div class="info-grid">
                 <div class="info-card full-width">
                     <h3>ผลงานและกิจกรรม (Activities & Achievements)</h3>
-                    <p>• เข้าร่วมโครงการอบรมเชิงปฏิบัติการด้านการแพทย์และสาธารณสุข</p>
-                    <p>• กิจกรรมจิตอาสาช่วยเหลือชุมชนและโรงพยาบาล</p>
-                    <p>• เกียรติบัตรการแข่งขันทักษะวิชาการระดับโรงเรียน/เขต</p>
+                    <p>• เข้าร่วมโครงการอบรมเชิงปฏิบัติการด้านการแพทย์และสาธารณสุข คณะแพทยศาสตร์</p>
+                    <p>• กิจกรรมจิตอาสาช่วยเหลือชุมชนและงานบริการในโรงพยาบาล</p>
+                    <p>• ได้รับเกียรติบัตรการแข่งขันทักษะวิชาการด้านวิทยาศาสตร์ระดับโรงเรียนและเขตพื้นที่การศึกษา</p>
                 </div>
             </div>
         </div>
 
-        <!-- 5. เนื้อหา ช่องทางการติดต่อ -->
-        <div id="contact" class="tab-content">
+        <!-- 5. แท็บ ช่องทางการติดต่อ -->
+        <div id="tab-contact" class="tab-content">
             <div class="info-grid">
                 <div class="info-card full-width">
                     <h3>ช่องทางการติดต่อ (Contact Information)</h3>
                     <p><strong>เบอร์โทรศัพท์:</strong> 08X-XXX-XXXX</p>
                     <p><strong>อีเมล:</strong> nattawat@example.com</p>
+                    <p><strong>Line ID:</strong> nattawat_u</p>
                     <p><strong>ที่อยู่:</strong> กรุงเทพมหานคร, ประเทศไทย</p>
                 </div>
             </div>
@@ -388,34 +390,40 @@
 
     </div>
 
-    <!-- สคริปต์สลับแท็บพร้อมป้องกันการโหลดซ้ำ -->
+    <!-- สคริปต์สลับแท็บแบบรวดเร็วและไม่โหลดหน้าใหม่ -->
     <script>
-        function switchTab(tabId, btnElement) {
-            const targetTab = document.getElementById(tabId);
-            
-            // หากแท็บนั้นเปิดอยู่อยู่แล้ว ให้ยกเลิกการทำงาน (อยู่หน้าเดิม ไม่กระพริบ ไม่โหลดซ้ำ)
-            if (targetTab && targetTab.classList.contains('active')) {
-                return;
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            const allNavButtons = document.querySelectorAll('.nav-btn, .gold-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
 
-            // ซ่อนเนื้อหาทั้งหมด
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
+            allNavButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('data-target');
+                    if (!targetId) return;
 
-            // ลบสถานะ active จากปุ่มทั้งหมด
-            const buttons = document.querySelectorAll('.nav-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
+                    // 1. ซ่อนทุกแท็บ แล้วเปิดเฉพาะแท็บเป้าหมาย
+                    tabContents.forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
 
-            // แสดงเนื้อหาแท็บที่เลือก
-            if (targetTab) {
-                targetTab.classList.add('active');
-            }
-
-            // ไฮไลต์ปุ่มที่เลือก
-            if (btnElement) {
-                btnElement.classList.add('active');
-            }
-        }
+                    // 2. ปรับแสงเรือง active ให้เฉพาะปุ่มแท็บที่ตรงกับเนื้อหา
+                    const navTabButtons = document.querySelectorAll('.nav-btn');
+                    navTabButtons.forEach(btn => {
+                        if (btn.getAttribute('data-target') === targetId) {
+                            btn.classList.add('active');
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
     </script>
 
 </body>
