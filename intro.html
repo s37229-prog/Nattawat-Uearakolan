@@ -14,7 +14,7 @@ body {
     margin: 0;
 }
 .container { 
-    max-width: 1100px; /* ปรับความกว้างหลักให้กว้างขึ้น */
+    max-width: 1100px;
     margin: 0 auto; 
 }
 
@@ -24,9 +24,9 @@ body {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.25);
     color: #ffffff;
-    padding: 8px 30px; /* เพิ่มขนาดพื้นที่ขอบ */
+    padding: 8px 30px;
     border-radius: 25px;
-    font-size: 15px; /* ขยายตัวหนังสือ */
+    font-size: 15px;
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 30px;
@@ -43,7 +43,7 @@ body {
 }
 
 .logo-img {
-    width: 110px; /* ขยายขนาดโลโก้ */
+    width: 110px;
     height: 110px;
     border-radius: 50%;
     border: 3px solid #00d2ff;
@@ -58,7 +58,7 @@ body {
     background: #0f2333;
     border: 1px solid #1c3b52;
     border-radius: 20px;
-    padding: 25px 35px; /* เพิ่มพื้นที่ในการ์ด */
+    padding: 25px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,13 +68,13 @@ body {
 
 .main-card-info h2 {
     margin: 0 0 10px 0;
-    font-size: 26px; /* ขยายชื่อหัวข้อ */
+    font-size: 26px;
     color: #ffffff;
 }
 
 .main-card-info p {
     margin: 6px 0;
-    font-size: 15px; /* ขยายตัวอักษรรายละเอียด */
+    font-size: 15px;
     color: #b0c4de;
 }
 
@@ -86,7 +86,7 @@ body {
 
 /* 🖼️ กรอบเส้นประ Add Photo ในการ์ดหลัก */
 .header-photo-box {
-    width: 130px; /* ขยายกล่องรูปภาพ */
+    width: 130px;
     height: 130px;
     border: 2px dashed #3a6073;
     border-radius: 14px;
@@ -113,22 +113,27 @@ body {
     gap: 15px;
     margin: 25px 0;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
 }
 
 .nav-btn {
     background-color: #0d1e2d;
     color: #a0b2c6;
     border: 1px solid #1a3348;
-    padding: 12px 26px; /* ขยายปุ่มกด */
+    padding: 12px 26px;
     text-decoration: none;
-    font-size: 15px; /* ขยายฟอนต์ปุ่ม */
+    font-size: 15px;
     border-radius: 25px;
     transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
 }
 
 .nav-btn:hover {
     color: #ffffff;
     border-color: #00d2ff;
+    transform: translateY(-2px);
 }
 
 /* ปุ่มแท็บปัจจุบัน (Active) พร้อมแสงเรืองฟ้า */
@@ -146,13 +151,14 @@ body {
     background: linear-gradient(180deg, #e5a93c 0%, #c68313 100%);
     color: #000000;
     font-weight: bold;
-    padding: 12px 36px; /* ขยายปุ่ม */
+    padding: 12px 36px;
     text-decoration: none;
     border-radius: 25px;
-    font-size: 16px; /* ขยายฟอนต์ */
+    font-size: 16px;
     margin: 10px 0 30px 0;
     box-shadow: 0 4px 15px rgba(229, 169, 60, 0.3);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-gold:hover {
@@ -172,14 +178,17 @@ body {
     background: #ffffff;
     color: #1a202c;
     border-radius: 18px;
-    padding: 30px; /* เพิ่มพื้นที่ภายในขอบ */
+    padding: 30px;
     text-align: left;
     box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .white-card h3 {
     margin-top: 0;
-    font-size: 20px; /* ขยายหัวข้อการ์ด */
+    font-size: 20px;
     color: #0f2333;
     border-bottom: 2px solid #edf2f7;
     padding-bottom: 10px;
@@ -188,7 +197,7 @@ body {
 /* กรอบรูปภาพการ์ดขาวฝั่งซ้าย */
 .image-placeholder {
     width: 100%;
-    height: 280px; /* ขยายความสูงรูปภาพ */
+    height: 280px;
     border: 2px dashed #cbd5e0;
     border-radius: 12px;
     background: #f7fafc;
@@ -201,7 +210,7 @@ body {
 }
 
 .white-card p {
-    font-size: 16px; /* ขยายขนาดข้อความคำนำ */
+    font-size: 16px;
     line-height: 1.8;
     color: #2d3748;
     text-indent: 1.5em;
@@ -210,10 +219,59 @@ body {
 
 .signature {
     text-align: right;
-    margin-top: 25px;
+    margin-top: 20px;
     font-weight: bold;
     color: #0f2333;
-    font-size: 15px; /* ขยายฟอนต์ลายเซ็น */
+    font-size: 15px;
+}
+
+/* ➡️ ปุ่มนำทางกดไปต่อ / ย้อนกลับ ด้านล่างสุดของการ์ด */
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-page {
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-prev {
+    background-color: #edf2f7;
+    color: #4a5568;
+    border: 1px solid #cbd5e0;
+}
+
+.btn-prev:hover {
+    background-color: #e2e8f0;
+    color: #1a202c;
+}
+
+.btn-next {
+    background-color: #0f2333;
+    color: #ffffff;
+    border: 1px solid #00d2ff;
+    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.3);
+}
+
+.btn-next:hover {
+    background-color: #00d2ff;
+    color: #07131e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 210, 255, 0.5);
 }
 
 /* 📱 Responsive สำหรับหน้าจอมือถือ */
@@ -225,6 +283,15 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 20px;
+    }
+    .bottom-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn-page {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
     }
 }
 </style>
@@ -257,7 +324,7 @@ body {
         <img src="network_KKU.png" alt="โลโก้ขวา" class="logo-img">
     </div>
 
-    <!-- แถบปุ่มกด 5 ปุ่ม (ปุ่ม "คำนำ" มีแสงเรืองสีฟ้า) -->
+    <!-- แถบปุ่มกดนำทาง (Navigation Menu) -->
     <div class="nav-menu">
         <a href="portfolio.html" class="nav-btn">PORTFOLIO</a>
         <a href="preface.html" class="nav-btn active">คำนำ</a>
@@ -274,23 +341,33 @@ body {
         
         <!-- การ์ดฝั่งซ้าย: รูปภาพคำนำ -->
         <div class="white-card">
-            <h3>รูปภาพประกอบคำนำ</h3>
-            <div class="image-placeholder">
-                <span style="font-size: 32px; margin-bottom: 8px;">📷</span>
-                <span>ใส่รูปภาพของคุณที่นี่</span>
+            <div>
+                <h3>รูปภาพประกอบคำนำ</h3>
+                <div class="image-placeholder">
+                    <span style="font-size: 32px; margin-bottom: 8px;">📷</span>
+                    <span>ใส่รูปภาพของคุณที่นี่</span>
+                </div>
             </div>
         </div>
 
-        <!-- การ์ดฝั่งขวา: ข้อความคำนำ -->
+        <!-- การ์ดฝั่งขวา: ข้อความคำนำ + ปุ่มกดไปหน้าถัดไป -->
         <div class="white-card">
-            <h3>คำนำ (PREFACE)</h3>
-            <p>แฟ้มสะสมงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ ความสนใจ ตลอดจนผลงานและกิจกรรมต่าง ๆ ของข้าพเจ้า นายณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
-            <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมงานเล่มนี้จะทำให้ทุกท่านได้เห็นถึงความตั้งใจและความมุ่งมั่นในการเรียนรู้เพื่อพัฒนาตนเองเข้าสู่การศึกษาต่อในระดับอุดมศึกษาต่อไป</p>
-            <p>ขอขอบพระคุณ คุณครู คุณพ่อ คุณแม่ และเพื่อน ๆ ที่ให้การสนับสนุนและเป็นกำลังใจที่ดีเสมอมา หากมีข้อผิดพลาดประการใด ข้าพเจ้าขออภัยมา ณ ที่นี้ด้วยครับ</p>
-            
-            <div class="signature">
-                ณัฐวรรธน์ เอื้อรักษ์โอฬาร<br>
-                <span style="font-weight: normal; color: #718096; font-size: 13px;">ผู้จัดทำ</span>
+            <div>
+                <h3>คำนำ (PREFACE)</h3>
+                <p>แฟ้มสะสมงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ ความสนใจ ตลอดจนผลงานและกิจกรรมต่าง ๆ ของข้าพเจ้า นายณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
+                <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมงานเล่มนี้จะทำให้ทุกท่านได้เห็นถึงความตั้งใจและความมุ่งมั่นในการเรียนรู้เพื่อพัฒนาตนเองเข้าสู่การศึกษาต่อในระดับอุดมศึกษาต่อไป</p>
+                <p>ขอขอบพระคุณ คุณครู คุณพ่อ คุณแม่ และเพื่อน ๆ ที่ให้การสนับสนุนและเป็นกำลังใจที่ดีเสมอมา หากมีข้อผิดพลาดประการใด ข้าพเจ้าขออภัยมา ณ ที่นี้ด้วยครับ</p>
+                
+                <div class="signature">
+                    ณัฐวรรธน์ เอื้อรักษ์โอฬาร<br>
+                    <span style="font-weight: normal; color: #718096; font-size: 13px;">ผู้จัดทำ</span>
+                </div>
+            </div>
+
+            <!-- 🔘 แถบปุ่มกดไปต่อ / ย้อนกลับ ด้านล่างสุด -->
+            <div class="bottom-nav">
+                <a href="portfolio.html" class="btn-page btn-prev">⬅️ หน้าก่อนหน้า (Portfolio)</a>
+                <a href="profile.html" class="btn-page btn-next">หน้าถัดไป (ประวัติส่วนตัว) ➔</a>
             </div>
         </div>
 
