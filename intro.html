@@ -136,13 +136,18 @@ body {
     transform: translateY(-2px);
 }
 
-/* ปุ่มแท็บปัจจุบัน (Active) พร้อมแสงเรืองฟ้า */
+/* ปุ่มแท็บปัจจุบัน (Active) อยู่หน้าเดิมเมื่อคลิก */
 .nav-btn.active {
     background-color: #0d2232;
     color: #ffffff;
     border: 2px solid #00d2ff;
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
     font-weight: bold;
+    cursor: default;
+}
+
+.nav-btn.active:hover {
+    transform: none;
 }
 
 /* 🟡 ปุ่มกลับหน้าแรกสีทอง */
@@ -225,7 +230,7 @@ body {
     font-size: 15px;
 }
 
-/* ➡️ ปุ่มนำทางกดไปต่อ / ย้อนกลับ ด้านล่างสุดของการ์ด */
+/* ➡️ ปุ่มนำทางด้านล่าง */
 .bottom-nav {
     display: flex;
     justify-content: space-between;
@@ -324,10 +329,10 @@ body {
         <img src="network_KKU.png" alt="โลโก้ขวา" class="logo-img">
     </div>
 
-    <!-- แถบปุ่มกดนำทาง (Navigation Menu) -->
+    <!-- แถบปุ่มกดนำทาง (ตั้งค่าปุ่ม "คำนำ" ให้เป็น href="#" เพื่อให้อยู่หน้าเดิม) -->
     <div class="nav-menu">
         <a href="portfolio.html" class="nav-btn">PORTFOLIO</a>
-        <a href="preface.html" class="nav-btn active">คำนำ</a>
+        <a href="#" class="nav-btn active">คำนำ</a>
         <a href="profile.html" class="nav-btn">ประวัติส่วนตัว</a>
         <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
         <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
@@ -350,7 +355,7 @@ body {
             </div>
         </div>
 
-        <!-- การ์ดฝั่งขวา: ข้อความคำนำ + ปุ่มกดไปหน้าถัดไป -->
+        <!-- การ์ดฝั่งขวา: ข้อความคำนำ -->
         <div class="white-card">
             <div>
                 <h3>คำนำ (PREFACE)</h3>
