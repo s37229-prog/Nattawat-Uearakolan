@@ -7,7 +7,7 @@
 <style>
 body { 
     font-family: 'Sarabun', sans-serif, system-ui; 
-    background-color: #06111b; 
+    background-color: #07131e; 
     color: #ffffff;
     text-align: center;
     padding: 35px 20px; 
@@ -21,8 +21,8 @@ body {
 /* 🏷️ Badge หัวข้อบนสุด */
 .top-badge {
     display: inline-block;
-    background: rgba(10, 28, 42, 0.8);
-    border: 1.5px solid #00d2ff;
+    background: rgba(0, 210, 255, 0.05);
+    border: 1px solid #00d2ff;
     color: #ffffff;
     padding: 6px 26px;
     border-radius: 20px;
@@ -30,7 +30,7 @@ body {
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 25px;
-    box-shadow: 0 0 12px rgba(0, 210, 255, 0.3);
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.25);
 }
 
 /* 💡 กลุ่มโลโก้และกล่องหัวข้อหลัก */
@@ -48,7 +48,7 @@ body {
     height: 100px;
     border-radius: 50%;
     border: 2px solid #00d2ff;
-    box-shadow: 0 0 18px rgba(0, 210, 255, 0.5);
+    box-shadow: 0 0 18px rgba(0, 210, 255, 0.6);
     object-fit: cover;
     background: #ffffff;
 }
@@ -56,8 +56,8 @@ body {
 .main-card {
     flex: 1;
     min-width: 320px;
-    background: #0d2030;
-    border: 1px solid #1a3952;
+    background: #0d2232;
+    border: 1px solid #1a3c54;
     border-radius: 18px;
     padding: 22px 30px;
     display: flex;
@@ -90,7 +90,7 @@ body {
 .header-photo-box {
     width: 120px;
     height: 120px;
-    border: 1.5px dashed #2f546d;
+    border: 1.5px dashed #2d5068;
     border-radius: 14px;
     display: flex;
     flex-direction: column;
@@ -118,9 +118,9 @@ body {
 }
 
 .nav-btn {
-    background-color: #0a1824;
+    background-color: #0b1a27;
     color: #8ea8c3;
-    border: 1px solid #163248;
+    border: 1px solid #183348;
     padding: 10px 24px;
     text-decoration: none;
     font-size: 14px;
@@ -134,9 +134,9 @@ body {
     border-color: #00d2ff;
 }
 
-/* ปุ่มแท็บปัจจุบัน (คำนำ Active แบบเรืองแสงเหมือนในภาพตัวอย่าง) */
+/* ปุ่มแท็บปัจจุบัน (คำนำ Active แบบเรืองแสงฟ้า) */
 .nav-btn.active {
-    background-color: #0a1d2d;
+    background-color: #0d273a;
     color: #ffffff;
     border: 1.5px solid #00d2ff;
     box-shadow: 0 0 14px rgba(0, 210, 255, 0.7);
@@ -240,9 +240,9 @@ body {
     <!-- Badge บนสุด -->
     <div class="top-badge">TCAS PORTFOLIO</div>
 
-    <!-- ส่วนหัว: โลโก้ซ้าย + กล่องข้อมูลหลัก + โลโก้ขวา -->
+    <!-- ส่วนหัว: โลโก้ซ้าย (Mahidol_U.png) + กล่องข้อมูลหลัก + โลโก้ขวา (images.jpg) -->
     <div class="header-group">
-        <img src="network_KKU.png" alt="โลโก้ซ้าย" class="logo-img">
+        <img src="Mahidol_U.png" alt="โลโก้มหาวิทยาลัยมหิดล" class="logo-img">
         
         <div class="main-card">
             <div class="main-card-info">
@@ -258,10 +258,10 @@ body {
             </div>
         </div>
 
-        <img src="network_KKU.png" alt="โลโก้ขวา" class="logo-img">
+        <img src="images.jpg" alt="โลโก้คณะแพทยศาสตร์ศิริราชพยาบาล" class="logo-img">
     </div>
 
-    <!-- แถบปุ่มกดนำทาง (ปุ่ม "คำนำ" เรืองแสงเป็น Active) -->
+    <!-- แถบปุ่มกดนำทาง (ปุ่ม "คำนำ" Active เรืองแสง) -->
     <div class="nav-menu">
         <a href="portfolio.html" class="nav-btn">PORTFOLIO</a>
         <a href="#" class="nav-btn active">คำนำ</a>
