@@ -2,49 +2,230 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>หน้าแนะนำตัวของฉัน</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>หน้าแนะนำตัวของฉัน - Nattawat</title>
+
+<!-- ดึงฟอนต์ Prompt จาก Google Fonts ให้เหมือนในภาพ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Prompt', sans-serif;
+}
+
 body {
-    background-color: #A73B24;
-    text-align: center; 
-    padding: 50px 20px;
+    background: linear-gradient(135deg, #050d15 0%, #0a1926 50%, #0d2030 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
 }
 
+/* Badge ด้านบน */
+.top-badge {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    color: #ffffff;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+}
+
+/* การ์ดหลัก */
 .card {
-    background: white; 
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    max-width: 500px; 
-    margin: 0 auto; 
-    padding: 30px;
-    overflow: hidden; /* ป้องกันรูปภาพล้นขอบโค้ง */
-}
-
-/* เพิ่มสไตล์สำหรับรูปภาพปก */
-.cover-img {
+    background: rgba(16, 33, 48, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    max-width: 750px;
     width: 100%;
-    height: 200px;            /* ความสูงของรูปปก ปรับเปลี่ยนได้ตามต้องการ */
-    object-fit: cover;        /* ช่วยให้รูปไม่เสียสัดส่วน */
-    border-radius: 8px;       /* ทำมุมโค้งมน */
-    margin-bottom: 20px;
+    padding: 35px 40px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    backdrop-filter: blur(10px);
 }
 
-h1 { color: #2c3e50; margin-top: 10px; }
-p { font-size: 18px; line-height: 1.6; }
+/* ฝั่งข้อความด้านซ้าย */
+.card-content {
+    flex: 1;
+    text-align: left;
+}
+
+.card-content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    font-size: 15px;
+    color: #9ab0c1;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.card-content p strong {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.card-content .highlight {
+    color: #00e5ff;
+}
+
+/* ช่องใส่รูปภาพด้านขวา */
+.photo-box {
+    width: 220px;
+    height: 220px;
+    border: 2px dashed rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #7a94a8;
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-box:hover {
+    border-color: #00e5ff;
+    color: #00e5ff;
+    background: rgba(0, 229, 255, 0.05);
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-box .plus-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.photo-box span {
+    font-size: 13px;
+}
+
+/* แถบเมนูปุ่มกดด้านล่าง */
+.nav-pills {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pill-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a0b2c6;
+    padding: 8px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.pill-btn:hover, .pill-btn.active {
+    border-color: #00e5ff;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+/* ปุ่มสีทองด้านล่างสุด */
+.action-btn {
+    margin-top: 25px;
+    background-color: #dfaa5b;
+    color: #1a1000;
+    padding: 10px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(223, 170, 91, 0.3);
+}
+
+.action-btn:hover {
+    background-color: #f0be72;
+    transform: translateY(-2px);
+}
+
+/* รองรับการแสดงผลบนมือถือ */
+@media (max-width: 650px) {
+    .card {
+        flex-direction: column-reverse;
+        padding: 25px;
+        text-align: center;
+    }
+    .card-content {
+        text-align: center;
+    }
+    .photo-box {
+        width: 180px;
+        height: 180px;
+    }
+}
 </style>
 </head>
 <body>
 
-<div class="card">
-    <!-- แทรกรูปภาพปกตรงนี้ -->
-    <img src="cover.jpg" alt="รูปภาพปก" class="cover-img">
+    <!-- Badge หัวข้อบนสุด -->
+    <div class="top-badge">MY PORTFOLIO</div>
 
-    <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h1>
-    <p>สวัสดีครับ! ผมชื่อ <strong>ณัฐวรรธน์ (Nattawat)</strong></p>
-    <p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
-    <p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p>
-    <a href="portfolio.html" style="display:inline-block; background:#3498db; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; margin-top:15px;">👉 ดูแฟ้มสะสมงานของผม</a>
-</div>
+    <!-- การ์ดหลัก -->
+    <div class="card">
+        <!-- ฝั่งข้อมูลรายละเอียด -->
+        <div class="card-content">
+            <h1>แฟ้มสะสมงาน (Portfolio)</h1>
+            <p>สวัสดีครับ! ผมชื่อ <strong>ณัฐวรรธน์ (Nattawat)</strong></p>
+            <p>ขณะนี้กำลังศึกษา/สนใจด้าน <span class="highlight">Computer Science & Engineering</span></p>
+            <p style="font-size: 13px; margin-top: 15px; color: #6b8296;">
+                เว็บไซต์นี้โฮสต์อยู่บน GitHub Pages
+            </p>
+        </div>
+
+        <!-- ฝั่งใส่รูปภาพปก/รูปโปรไฟล์ -->
+        <div class="photo-box">
+            <!-- หากต้องการใส่รูป ให้ปลดคอมเมนต์บรรทัดด้านล่างแล้วเปลี่ยนชื่อรูปภาพ -->
+            <!-- <img src="profile.jpg" alt="รูปโปรไฟล์"> -->
+            <div class="plus-icon">+</div>
+            <span>Add Photo</span>
+        </div>
+    </div>
+
+    <!-- แถบปุ่มนำทาง -->
+    <div class="nav-pills">
+        <a href="#" class="pill-btn active">หน้าแรก</a>
+        <a href="#" class="pill-btn">คำนำ</a>
+        <a href="#" class="pill-btn">ประวัติส่วนตัว</a>
+        <a href="#" class="pill-btn">ผลงานและกิจกรรม</a>
+        <a href="#" class="pill-btn">การติดต่อ</a>
+    </div>
+
+    <!-- ปุ่มลิงก์ดูผลงานสีทอง -->
+    <a href="portfolio.html" class="action-btn">👉 ดูแฟ้มสะสมงานของผม</a>
 
 </body>
 </html>
