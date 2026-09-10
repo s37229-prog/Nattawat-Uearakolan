@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>หน้าแนะนำตัวของฉัน - Nattawat</title>
 
-<!-- ดึงฟอนต์ Prompt จาก Google Fonts ให้เหมือนในภาพ -->
+<!-- ดึงฟอนต์ Prompt จาก Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -127,35 +127,9 @@ body {
     font-size: 13px;
 }
 
-/* แถบเมนูปุ่มกดด้านล่าง */
-.nav-pills {
-    display: flex;
-    gap: 10px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.pill-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #a0b2c6;
-    padding: 8px 22px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.pill-btn:hover, .pill-btn.active {
-    border-color: #00e5ff;
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
-}
-
 /* ปุ่มสีทองด้านล่างสุด */
 .action-btn {
-    margin-top: 25px;
+    margin-top: 35px;
     background-color: #dfaa5b;
     color: #1a1000;
     padding: 10px 35px;
@@ -208,20 +182,10 @@ body {
 
         <!-- ฝั่งใส่รูปภาพปก/รูปโปรไฟล์ -->
         <div class="photo-box">
-            <!-- หากต้องการใส่รูป ให้ปลดคอมเมนต์บรรทัดด้านล่างแล้วเปลี่ยนชื่อรูปภาพ -->
             <!-- <img src="profile.jpg" alt="รูปโปรไฟล์"> -->
             <div class="plus-icon">+</div>
             <span>Add Photo</span>
         </div>
-    </div>
-
-    <!-- แถบปุ่มนำทาง -->
-    <div class="nav-pills">
-        <a href="#" class="pill-btn active">หน้าแรก</a>
-        <a href="#" class="pill-btn">คำนำ</a>
-        <a href="#" class="pill-btn">ประวัติส่วนตัว</a>
-        <a href="#" class="pill-btn">ผลงานและกิจกรรม</a>
-        <a href="#" class="pill-btn">การติดต่อ</a>
     </div>
 
     <!-- ปุ่มลิงก์ดูผลงานสีทอง -->
