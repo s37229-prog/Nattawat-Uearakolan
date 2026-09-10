@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ประวัติส่วนตัว - TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
+    <title>ผลงานและกิจกรรม - TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,13 +216,13 @@
             box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
         }
 
-        /* --- เนื้อหาหน้าประวัติส่วนตัว --- */
+        /* --- เนื้อหาหน้าผลงานและกิจกรรม --- */
         .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 25px;
             width: 100%;
             margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
         .info-card {
@@ -255,77 +255,78 @@
             border-radius: 2px;
         }
 
-        /* ไทม์ไลน์ประวัติการศึกษา */
-        .timeline-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 28px;
-            border-left: 3px solid #00bcd4;
-        }
-
-        .timeline-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        .timeline-sub {
-            font-size: 20px;
-            color: #0284c7;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-
-        .timeline-desc {
-            font-size: 19px;
-            color: #475569;
-            margin-top: 4px;
-        }
-
-        /* ข้อมูลส่วนตัว */
-        .personal-info-list {
+        /* รายละเอียดข้อมูลเป้าหมาย/ความสนใจ/งานอดิเรก */
+        .profile-details {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
 
-        .info-row {
-            font-size: 20px;
+        .detail-item {
+            background: #f8fafc;
+            padding: 18px 24px;
+            border-left: 5px solid #00bcd4;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .detail-item strong {
+            color: #0f172a;
+            font-size: 19px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .detail-item p {
             color: #334155;
+            font-size: 17px;
             line-height: 1.6;
         }
 
-        .info-row strong {
-            color: #0f172a;
-            font-weight: 600;
+        .activity-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 10px;
         }
 
-        .two-cols {
+        .gallery-box {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            padding: 10px;
         }
 
-        .two-cols > div {
-            flex: 1;
+        .gallery-box:hover {
+            border-color: #00bcd4;
+            background: #e0f2fe;
+            color: #0284c7;
+        }
+
+        .gallery-box span {
+            font-size: 32px;
+            margin-bottom: 6px;
         }
 
         @media (max-width: 900px) {
             .main-hero { flex-direction: column; }
             .center-card { flex-direction: column; width: 100%; text-align: center; }
-            .info-grid { grid-template-columns: 1fr; }
             .info-card { padding: 32px 24px; }
             .info-card h3 { font-size: 24px; }
-            .timeline-title { font-size: 19px; }
-            .timeline-sub { font-size: 17px; }
-            .timeline-desc { font-size: 16px; }
-            .info-row { font-size: 18px; }
-            .two-cols { flex-direction: column; gap: 14px; }
+            .activity-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -366,63 +367,54 @@
         <div class="nav-tabs">
             <a href="portfolio.html" class="nav-btn">PORTFOLIO</a>
             <a href="intro.html" class="nav-btn">คำนำ</a>
-            <a href="profile.html" class="nav-btn active">ประวัติส่วนตัว</a>
-            <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
+            <a href="profile.html" class="nav-btn">ประวัติส่วนตัว</a>
+            <a href="activities.html" class="nav-btn active">ผลงานและกิจกรรม</a>
             <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
         </div>
 
         <a href="index.html" class="gold-btn">กลับหน้าแรก</a>
 
-        <!-- รายละเอียดประวัติส่วนตัว -->
+        <!-- รายละเอียดเป้าหมาย ความสนใจ งานอดิเรก และกิจกรรม -->
         <div class="info-grid">
-            <!-- กล่องประวัติการศึกษา -->
+            
+            <!-- การ์ดเป้าหมาย ความสนใจ และงานอดิเรก -->
             <div class="info-card">
-                <h3>ประวัติการศึกษา (Education)</h3>
-                <div class="timeline-list">
-                    <div class="timeline-item">
-                        <div class="timeline-title">การศึกษาระดับประถมศึกษา</div>
-                        <div class="timeline-sub">โรงเรียนวัฒนดรุณวิทย์</div>
+                <h3>เป้าหมายและความสนใจ</h3>
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <strong>🎯 เป้าหมายในการศึกษาต่อ</strong>
+                        <p>มีเป้าหมายในการศึกษาต่อระดับมหาวิทยาลัยมหิดลและประกอบอาชีพเป็นหมอ</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">ระดับมัธยมศึกษาตอนต้น</div>
-                        <div class="timeline-sub">โรงเรียนเทศบาล 1 (สถาวร)</div>
+                    <div class="detail-item">
+                        <strong>💡 ความสนใจ</strong>
+                        <p>มีความสนใจด้านวิทยาศาสตร์และการแพทย์</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">ระดับมัธยมศึกษาตอนปลาย</div>
-                        <div class="timeline-sub">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</div>
-                        <div class="timeline-desc">แผนการเรียน วิทยาการคอมพิวเตอร์ (CSE)</div>
+                    <div class="detail-item">
+                        <strong>🏸 งานอดิเรก</strong>
+                        <p>เล่นกีฬาแบดมินตันและศึกษาหาความรู้เพิ่มเติม</p>
                     </div>
                 </div>
             </div>
 
-            <!-- กล่องข้อมูลส่วนตัว -->
+            <!-- การ์ดผลงานและกิจกรรม -->
             <div class="info-card">
-                <h3>ข้อมูลส่วนตัว (Personal Info)</h3>
-                <div class="personal-info-list">
-                    <div class="info-row"><strong>ชื่อ:</strong> นายณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
-                    <div class="info-row"><strong>Name:</strong> Mr. Nattawat Uearakolan</div>
-                    
-                    <div class="info-row two-cols">
-                        <div><strong>ชื่อเล่น:</strong> ปอมปอม</div>
-                        <div><strong>Nickname:</strong> Pompom</div>
+                <h3>ผลงานและกิจกรรมที่เข้าร่วม</h3>
+                <div class="activity-gallery">
+                    <div class="gallery-box">
+                        <span>📷</span>
+                        <div>ภาพที่ 1</div>
                     </div>
-
-                    <div class="info-row two-cols">
-                        <div><strong>อายุ:</strong> 17 ปี</div>
-                        <div><strong>วันเกิด:</strong> 19 มกราคม พ.ศ. 2552</div>
+                    <div class="gallery-box">
+                        <span>📷</span>
+                        <div>ภาพที่ 2</div>
                     </div>
-
-                    <div class="info-row"><strong>สัญชาติ:</strong> ไทย</div>
-                    <div class="info-row"><strong>เชื้อชาติ:</strong> ไทย</div>
-                    <div class="info-row"><strong>ศาสนา:</strong> พุทธ</div>
-                    <div class="info-row"><strong>งานอดิเรก:</strong> เรียนพิเศษข้างนอก</div>
-                    <div class="info-row"><strong>โรงเรียน:</strong> บ้านบึง "อุตสาหกรรมนุเคราะห์"</div>
-                    <div class="info-row"><strong>แผนการเรียน:</strong> วิทยาการคอมพิวเตอร์ (CSE)</div>
-                    <div class="info-row"><strong>ทักษะ:</strong> การสื่อสารและการเรียนรู้ที่ไวและสามารถจดจำได้ดี</div>
-                    <div class="info-row"><strong>ความสนใจ:</strong> มีความสนใจเกี่ยวกับระบบร่างกายและการรักษาโรคด้วยวิธีการต่างๆ</div>
-                    <div class="info-row"><strong>เป้าหมาย:</strong> อยากจะศึกษาวิชาและวิธีการรักษาโรคให้มากขึ้นพอที่จะนำไปรักษาและดูแลคนป่วยที่ต้องการความช่วยเหลือให้ได้มากที่สุด</div>
+                    <div class="gallery-box">
+                        <span>📷</span>
+                        <div>ภาพที่ 3</div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
     </div>
