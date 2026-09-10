@@ -214,43 +214,41 @@
             box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
+        /* ปรับแต่งสไตล์การ์ดข้อมูลส่วนตัวแบบขยายใหญ่ */
+        .info-card-large {
             width: 100%;
-            margin-top: 10px;
-        }
-
-        .info-card {
             background: #ffffff;
             color: #1e293b;
-            padding: 28px 32px;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            padding: 40px 48px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            margin-top: 10px;
+            border-left: 6px solid #00e5ff;
         }
 
-        .info-card h3 {
-            font-size: 20px;
+        .info-card-large h3 {
+            font-size: 26px;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
             color: #0f172a;
-            border-bottom: 2px solid #00e5ff;
+            border-bottom: 3px solid #00e5ff;
             padding-bottom: 8px;
             display: inline-block;
         }
 
-        .info-card p {
-            font-size: 16px;
-            line-height: 1.8;
+        .info-card-large p {
+            font-size: 20px;
+            line-height: 2.1;
             color: #334155;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         @media (max-width: 900px) {
             .main-hero { flex-direction: column; }
             .center-card { flex-direction: column; width: 100%; text-align: center; }
-            .info-grid { grid-template-columns: 1fr; }
+            .info-card-large { padding: 28px 24px; }
+            .info-card-large p { font-size: 17px; }
+            .info-card-large h3 { font-size: 22px; }
         }
     </style>
 </head>
@@ -296,20 +294,12 @@
 
         <a href="index.html" class="gold-btn">กลับหน้าแรก</a>
 
-        <!-- เนื้อหาหน้า PORTFOLIO -->
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>ข้อมูลส่วนตัว (Personal Details)</h3>
-                <p><strong>ชื่อ-นามสกุล:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
-                <p><strong>แผนการเรียน:</strong> วิทยาศาสตร์ - คณิตศาสตร์</p>
-                <p><strong>เป้าหมาย:</strong> ศึกษาต่อหลักสูตรแพทยศาสตรบัณฑิต คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล</p>
-            </div>
-            <div class="info-card">
-                <h3>ผลงานเด่นและการเข้าร่วมกิจกรรม</h3>
-                <p>• ผ่านการเข้าร่วมกิจกรรมวิชาการและการอบรมทางการแพทย์</p>
-                <p>• รางวัลการแข่งขันทางด้านวิทยาศาสตร์และคณิตศาสตร์</p>
-                <p>• กิจกรรมจิตอาสาและพัฒนาคุณธรรมเพื่อสังคม</p>
-            </div>
+        <!-- เนื้อหาหน้า PORTFOLIO เหลือเฉพาะข้อมูลส่วนตัวขนาดใหญ่ -->
+        <div class="info-card-large">
+            <h3>ข้อมูลส่วนตัว (Personal Details)</h3>
+            <p><strong>ชื่อ-นามสกุล:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
+            <p><strong>แผนการเรียน:</strong> วิทยาศาสตร์ - คณิตศาสตร์</p>
+            <p><strong>เป้าหมาย:</strong> ศึกษาต่อหลักสูตรแพทยศาสตรบัณฑิต คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล</p>
         </div>
 
     </div>
