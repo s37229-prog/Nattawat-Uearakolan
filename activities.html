@@ -255,45 +255,11 @@
             border-radius: 2px;
         }
 
-        .timeline-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 28px;
-            border-left: 3px solid #00bcd4;
-        }
-
-        .timeline-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        .timeline-sub {
-            font-size: 20px;
-            color: #0284c7;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-
-        .timeline-desc {
-            font-size: 19px;
-            color: #475569;
-            margin-top: 6px;
-            line-height: 1.6;
-        }
-
-        /* กำหนด Grid Layout ให้แสดง 3 ช่องแบบเท่ากัน */
         .activity-gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
-            margin-top: 18px;
+            margin-top: 10px;
         }
 
         .gallery-box {
@@ -322,8 +288,8 @@
         }
 
         .gallery-box span {
-            font-size: 28px;
-            margin-bottom: 4px;
+            font-size: 32px;
+            margin-bottom: 6px;
         }
 
         @media (max-width: 900px) {
@@ -331,10 +297,7 @@
             .center-card { flex-direction: column; width: 100%; text-align: center; }
             .info-card { padding: 32px 24px; }
             .info-card h3 { font-size: 24px; }
-            .timeline-title { font-size: 19px; }
-            .timeline-sub { font-size: 17px; }
-            .timeline-desc { font-size: 16px; }
-            .activity-gallery { grid-template-columns: 1fr; } /* ปรับเป็น 1 คอลัมน์บนมือถือ */
+            .activity-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -384,80 +347,23 @@
 
         <!-- รายละเอียดผลงานและกิจกรรม -->
         <div class="info-grid">
-
-            <!-- ผลงานและกิจกรรมที่เข้าร่วม -->
             <div class="info-card">
                 <h3>ผลงานและกิจกรรมที่เข้าร่วม</h3>
-                <div class="timeline-list">
-                    <div class="timeline-item">
-                        <div class="timeline-title">รางวัลเหรียญทอง การแข่งขันโครงงานวิทยาศาสตร์และนวัตกรรม</div>
-                        <div class="timeline-sub">ระดับภาคตะวันออก | ปีการศึกษา 2566</div>
-                        <div class="timeline-desc">
-                            นำเสนอโครงงานวิจัยการประยุกต์ใช้ปัญญาประดิษฐ์ (AI) ในการช่วยคัดกรองพฤติกรรมสุขภาพเบื้องต้น ร่วมกับการใช้วิทยาการคอมพิวเตอร์ (CSE) เชื่อมโยงข้อมูลทางการแพทย์
-                        </div>
-                        <!-- โซนใส่ภาพผลงานและกิจกรรม 3 ภาพ -->
-                        <div class="activity-gallery">
-                            <div class="gallery-box">
-                                <span>📷</span>
-                                <div>ภาพที่ 1<br>(เกียรติบัตรรางวัล)</div>
-                            </div>
-                            <div class="gallery-box">
-                                <span>📷</span>
-                                <div>ภาพที่ 2<br>(บรรยากาศการนำเสนอ)</div>
-                            </div>
-                            <div class="gallery-box">
-                                <span>📷</span>
-                                <div>ภาพที่ 3<br>(ชิ้นงาน/ภาพร่วมกับคณะกรรมการ)</div>
-                            </div>
-                        </div>
+                <div class="activity-gallery">
+                    <div class="gallery-box">
+                        <span>📷</span>
+                        <div>ภาพที่ 1</div>
                     </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-title">การอบรมและผ่านการทดสอบค่ายส่งเสริมศักยภาพทางวิทยาศาสตร์และทางการแพทย์</div>
-                        <div class="timeline-sub">คณะแพทยศาสตร์ ศิริราชพยาบาล | ปีการศึกษา 2566</div>
-                        <div class="timeline-desc">
-                            เข้าร่วมการฝึกปฏิบัติการทางวิทยาศาสตร์สุขภาพ การเรียนรู้กายวิภาคศาสตร์เบื้องต้น และศึกษาดูงานบทบาทหน้าที่ของแพทย์ในโรงพยาบาลระดับตติยภูมิ
-                        </div>
+                    <div class="gallery-box">
+                        <span>📷</span>
+                        <div>ภาพที่ 2</div>
+                    </div>
+                    <div class="gallery-box">
+                        <span>📷</span>
+                        <div>ภาพที่ 3</div>
                     </div>
                 </div>
             </div>
-
-            <!-- กิจกรรมจิตอาสาและคุณธรรม -->
-            <div class="info-card">
-                <h3>กิจกรรมจิตอาสาและบำเพ็ญประโยชน์ (Voluntary & Social Services)</h3>
-                <div class="timeline-list">
-                    <div class="timeline-item">
-                        <div class="timeline-title">แกนนำกลุ่มจิตอาสาปฐมพยาบาลและดูแลสุขภาพชุมชน</div>
-                        <div class="timeline-sub">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" | ปีการศึกษา 2566 - 2567</div>
-                        <div class="timeline-desc">
-                            จัดกิจกรรมอบรมการปฐมพยาบาลเบื้องต้น (First Aid) และการช่วยชีวิตขั้นพื้นฐาน (CPR) ให้กับนักเรียนและประชาชนในชุมชนท้องถิ่น
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-title">อาสาสมัครอำนวยความสะดวกผู้ป่วยและผู้สูงอายุ</div>
-                        <div class="timeline-sub">โรงพยาบาลประจำจังหวัด | ปีการศึกษา 2565</div>
-                        <div class="timeline-desc">
-                            ช่วยคัดกรองผู้ป่วย ประสานงานจุดบริการวัดสัญญาณชีพเบื้องต้น และให้คำแนะนำขั้นตอนการรับบริการทางการแพทย์แก่ประชาชน
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- กิจกรรมผู้นำและการพัฒนาตนเอง -->
-            <div class="info-card">
-                <h3>กิจกรรมผู้นำและการส่งเสริมทักษะ (Leadership & Extracurricular)</h3>
-                <div class="timeline-list">
-                    <div class="timeline-item">
-                        <div class="timeline-title">ประธานชมรมคอมพิวเตอร์และเทคโนโลยีสารสนเทศ</div>
-                        <div class="timeline-sub">แผนการเรียน วิทยาการคอมพิวเตอร์ (CSE) | ปีการศึกษา 2566</div>
-                        <div class="timeline-desc">
-                            บริหารจัดการกิจกรรมชมรม จัดทำเวิร์กช็อปส่งเสริมทักษะ Digital Literacy และการเขียนโปรแกรมแก้ไขปัญหาจริงให้กับเพื่อนนักเรียน
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
     </div>
