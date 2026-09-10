@@ -218,6 +218,9 @@
 
         /* --- เนื้อหาหน้าประวัติส่วนตัว --- */
         .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 25px;
             width: 100%;
             margin-top: 10px;
         }
@@ -252,6 +255,7 @@
             border-radius: 2px;
         }
 
+        /* ไทม์ไลน์ประวัติการศึกษา */
         .timeline-list {
             list-style: none;
             display: flex;
@@ -284,14 +288,44 @@
             margin-top: 4px;
         }
 
+        /* ข้อมูลส่วนตัว */
+        .personal-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-row {
+            font-size: 20px;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .info-row strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .two-cols {
+            display: flex;
+            gap: 30px;
+        }
+
+        .two-cols > div {
+            flex: 1;
+        }
+
         @media (max-width: 900px) {
             .main-hero { flex-direction: column; }
             .center-card { flex-direction: column; width: 100%; text-align: center; }
+            .info-grid { grid-template-columns: 1fr; }
             .info-card { padding: 32px 24px; }
             .info-card h3 { font-size: 24px; }
             .timeline-title { font-size: 19px; }
             .timeline-sub { font-size: 17px; }
             .timeline-desc { font-size: 16px; }
+            .info-row { font-size: 18px; }
+            .two-cols { flex-direction: column; gap: 14px; }
         }
     </style>
 </head>
@@ -358,6 +392,32 @@
                         <div class="timeline-sub">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</div>
                         <div class="timeline-desc">แผนการเรียน วิทยาการคอมพิวเตอร์ (CSE)</div>
                     </div>
+                </div>
+            </div>
+
+            <!-- กล่องข้อมูลส่วนตัว -->
+            <div class="info-card">
+                <h3>ข้อมูลส่วนตัว (Personal Info)</h3>
+                <div class="personal-info-list">
+                    <div class="info-row"><strong>ชื่อ:</strong> นายณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
+                    <div class="info-row"><strong>Name:</strong> Mr. Nattawat Uearakolan</div>
+                    
+                    <div class="info-row two-cols">
+                        <div><strong>ชื่อเล่น:</strong> ปอมปอม</div>
+                        <div><strong>Nickname:</strong> Pompom</div>
+                    </div>
+
+                    <div class="info-row two-cols">
+                        <div><strong>อายุ:</strong> 17 ปี</div>
+                        <div><strong>วันเกิด:</strong> 19 มกราคม พ.ศ. 2552</div>
+                    </div>
+
+                    <div class="info-row"><strong>สัญชาติ:</strong> ไทย</div>
+                    <div class="info-row"><strong>เชื้อชาติ:</strong> ไทย</div>
+                    <div class="info-row"><strong>ศาสนา:</strong> พุทธ</div>
+                    <div class="info-row"><strong>งานอดิเรก:</strong> เรียนพิเศษข้างนอก</div>
+                    <div class="info-row"><strong>โรงเรียน:</strong> บ้านบึง "อุตสาหกรรมนุเคราะห์"</div>
+                    <div class="info-row"><strong>แผนการเรียน:</strong> วิทยาการคอมพิวเตอร์ (CSE)</div>
                 </div>
             </div>
         </div>
