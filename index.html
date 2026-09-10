@@ -1,4 +1,3 @@
-<!-- นี่คือโครงสร้างหน้าเว็บทังหมด ้ -->
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -6,27 +5,46 @@
 <title>หน้าแนะนำตัวของฉัน</title>
 <style>
 body {
-background-color: #A73B24;
-text-align: center; padding: 50px;
-
+    background-color: #A73B24;
+    text-align: center; 
+    padding: 50px 20px;
 }
+
 .card {
-background: white; border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-max-width: 500px; margin: 0 auto; padding: 30px;
-
+    background: white; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 30px;
+    overflow: hidden; /* ป้องกันรูปภาพล้นขอบโค้ง */
 }
-h1 { color: #2c3e50; }
+
+/* เพิ่มสไตล์สำหรับรูปภาพปก */
+.cover-img {
+    width: 100%;
+    height: 200px;            /* ความสูงของรูปปก ปรับเปลี่ยนได้ตามต้องการ */
+    object-fit: cover;        /* ช่วยให้รูปไม่เสียสัดส่วน */
+    border-radius: 8px;       /* ทำมุมโค้งมน */
+    margin-bottom: 20px;
+}
+
+h1 { color: #2c3e50; margin-top: 10px; }
 p { font-size: 18px; line-height: 1.6; }
 </style>
 </head>
 <body>
+
 <div class="card">
-<h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน </h1>
-<p>สวัสดีครับ! ผมชื่อ <strong>ณัฐวรรธน์ (Nattawat)</strong></p>
-<p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
-<p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p>
-  <a href="portfolio.html" style="display:inline-block; background:#3498db; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; margin-top:15px;">👉 ดูแฟ้มสะสมงานของผม</a>
+    <!-- แทรกรูปภาพปกตรงนี้ -->
+    <img src="cover.jpg" alt="รูปภาพปก" class="cover-img">
+
+    <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h1>
+    <p>สวัสดีครับ! ผมชื่อ <strong>ณัฐวรรธน์ (Nattawat)</strong></p>
+    <p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
+    <p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p>
+    <a href="portfolio.html" style="display:inline-block; background:#3498db; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; margin-top:15px;">👉 ดูแฟ้มสะสมงานของผม</a>
 </div>
+
 </body>
 </html>
