@@ -1,1 +1,398 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติส่วนตัว - TCAS Portfolio - ณัฐวรรธน์ เอื้อรักษ์โอฬาร</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Prompt', 'Sarabun', sans-serif;
+        }
 
+        body {
+            background: radial-gradient(circle at center, #0f3042 0%, #061520 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .portfolio-container {
+            width: 100%;
+            max-width: 1280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* --- ส่วนปก / Header --- */
+        .top-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            padding: 8px 32px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #e0f7fa;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+        }
+
+        .main-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            width: 100%;
+        }
+
+        .circle-frame {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid #8fe3ff;
+            box-shadow: 0 0 20px rgba(143, 227, 255, 0.4), inset 0 0 12px rgba(143, 227, 255, 0.3);
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #0d2838;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .center-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(0, 229, 255, 0.35);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+        }
+
+        .card-text-side {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .card-text-side h1 {
+            font-size: 34px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .card-text-side h2 {
+            font-size: 22px;
+            font-weight: 400;
+            color: #d1ecf1;
+            line-height: 1.45;
+        }
+
+        .card-text-side .course {
+            font-size: 22px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .card-text-side .author {
+            font-size: 18px;
+            color: #a0c4d6;
+            margin-top: 6px;
+        }
+
+        .card-image-side {
+            flex: 0.9;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-square-box {
+            width: 100%;
+            max-width: 260px;
+            aspect-ratio: 1 / 1;
+            border: 2px dashed rgba(255, 255, 255, 0.45);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #b0bec5;
+        }
+
+        .image-square-box:hover {
+            border-style: solid;
+            border-color: #00e5ff;
+            background: rgba(0, 229, 255, 0.12);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+        }
+
+        .image-square-box .plus-icon {
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .image-square-box span {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* --- เมนูนำทาง --- */
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #e0f2fe;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .nav-btn.active, .nav-btn:hover {
+            background: rgba(0, 229, 255, 0.18);
+            border-color: #00e5ff;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+        }
+
+        .gold-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(135deg, #e6c875 0%, #a88038 100%);
+            border: none;
+            color: #1a1000;
+            padding: 12px 48px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .gold-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
+        }
+
+        /* --- เนื้อหาหน้าประวัติส่วนตัว --- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            color: #1e293b;
+            padding: 40px 45px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .info-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 24px;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .info-card h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #00bcd4;
+            border-radius: 2px;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-item {
+            font-size: 21px;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        .info-item strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .timeline-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 28px;
+            border-left: 3px solid #00bcd4;
+        }
+
+        .timeline-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .timeline-sub {
+            font-size: 20px;
+            color: #0284c7;
+            font-weight: 600;
+        }
+
+        .timeline-desc {
+            font-size: 19px;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .main-hero { flex-direction: column; }
+            .center-card { flex-direction: column; width: 100%; text-align: center; }
+            .info-grid { grid-template-columns: 1fr; }
+            .info-card { padding: 32px 24px; }
+            .info-card h3 { font-size: 24px; }
+            .info-item { font-size: 18px; }
+            .timeline-title { font-size: 19px; }
+            .timeline-sub { font-size: 17px; }
+            .timeline-desc { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portfolio-container">
+        <!-- Badge ด้านบนสุด -->
+        <div class="top-badge">TCAS PORTFOLIO</div>
+
+        <!-- ส่วนปก (Hero Banner) -->
+        <div class="main-hero">
+            <div class="circle-frame">
+                <img src="Mahidol_U.png" alt="Mahidol University Logo">
+            </div>
+
+            <div class="center-card">
+                <div class="card-text-side">
+                    <h1>แฟ้มสะสมงาน (Portfolio)</h1>
+                    <h2>คณะแพทยศาสตร์ศิริราชพยาบาล<br>มหาวิทยาลัยมหิดล</h2>
+                    <div class="course">หลักสูตรแพทยศาสตรบัณฑิต</div>
+                    <div class="author">จัดทำโดย : ณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
+                </div>
+
+                <div class="card-image-side">
+                    <div class="image-square-box">
+                        <div class="plus-icon">+</div>
+                        <span>Add Photo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="circle-frame">
+                <img src="images.jpg" alt="Profile Picture">
+            </div>
+        </div>
+
+        <!-- แถบเมนูนำทาง -->
+        <div class="nav-tabs">
+            <a href="portfolio.html" class="nav-btn">PORTFOLIO</a>
+            <a href="intro.html" class="nav-btn">คำนำ</a>
+            <a href="profile.html" class="nav-btn active">ประวัติส่วนตัว</a>
+            <a href="activities.html" class="nav-btn">ผลงานและกิจกรรม</a>
+            <a href="contact.html" class="nav-btn">ช่องทางการติดต่อ</a>
+        </div>
+
+        <a href="index.html" class="gold-btn">กลับหน้าแรก</a>
+
+        <!-- รายละเอียดประวัติส่วนตัว -->
+        <div class="info-grid">
+            <!-- กล่องข้อมูลทั่วไป -->
+            <div class="info-card">
+                <h3>ข้อมูลทั่วไป (General Info)</h3>
+                <div class="info-list">
+                    <div class="info-item"><strong>ชื่อ-นามสกุล:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
+                    <div class="info-item"><strong>Name:</strong> Mr. Natthawat Uearakolan</div>
+                    <div class="info-item"><strong>ชื่อเล่น:</strong> ปอมปอม (Pompom)</div>
+                    <div class="info-item"><strong>แผนการเรียน:</strong> วิทยาการคอมพิวเตอร์ (CSE)</div>
+                    <div class="info-item"><strong>โรงเรียน:</strong> โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</div>
+                    <div class="info-item"><strong>สัญชาติ:</strong> ไทย | <strong>เชื้อชาติ:</strong> ไทย</div>
+                    <div class="info-item"><strong>ศาสนา:</strong> พุทธ</div>
+                </div>
+            </div>
+
+            <!-- กล่องประวัติการศึกษา -->
+            <div class="info-card">
+                <h3>ประวัติการศึกษา (Education)</h3>
+                <div class="timeline-list">
+                    <div class="timeline-item">
+                        <div class="timeline-title">ระดับมัธยมศึกษาตอนปลาย (ม.4 - ม.6)</div>
+                        <div class="timeline-sub">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</div>
+                        <div class="timeline-desc">แผนการเรียน วิทยาการคอมพิวเตอร์ (CSE)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-title">ระดับมัธยมศึกษาตอนต้น (ม.1 - ม.3)</div>
+                        <div class="timeline-sub">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
