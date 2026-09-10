@@ -214,91 +214,116 @@
             box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
         }
 
-        /* การ์ดข้อมูลส่วนตัวขนาดใหญ่ */
+        /* การ์ดข้อมูลส่วนตัว */
         .info-card-large {
             width: 100%;
             background: #ffffff;
             color: #1e293b;
-            padding: 40px 48px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            padding: 40px 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             margin-top: 10px;
-            border-left: 6px solid #00e5ff;
         }
 
         .info-card-large h3 {
-            font-size: 28px;
-            font-weight: 600;
+            font-size: 26px;
+            font-weight: 700;
+            color: #0f172a;
             margin-bottom: 24px;
-            color: #0f172a;
-            border-bottom: 3px solid #00e5ff;
-            padding-bottom: 8px;
             display: inline-block;
+            position: relative;
+            padding-bottom: 6px;
         }
 
-        .info-card-large p {
-            font-size: 21px;
-            line-height: 2.2;
+        .info-card-large h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #00bcd4;
+            border-radius: 2px;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .info-item {
+            font-size: 18px;
+            line-height: 1.6;
             color: #334155;
-            margin-bottom: 12px;
         }
 
-        /* กล่องเน้นข้อความเป้าหมายการศึกษา */
-        .goal-box {
-            margin-top: 20px;
-            padding: 24px 28px;
-            background: #f0f9ff;
-            border: 1.5px solid #bae6fd;
-            border-left: 5px solid #0284c7;
-            border-radius: 14px;
-        }
-
-        .goal-box .goal-title {
-            font-size: 22px;
-            font-weight: 600;
-            color: #0369a1;
-            margin-bottom: 12px;
-        }
-
-        .goal-box .target-degree {
-            font-size: 21px;
-            font-weight: 600;
+        .info-item strong {
             color: #0f172a;
-            margin-bottom: 14px;
+            font-weight: 600;
         }
 
-        .goal-box ul {
+        /* กล่องเน้นข้อความเป้าหมายทางการศึกษา */
+        .goal-box {
+            background: #f0f7fd;
+            border: 1px solid #bae6fd;
+            border-left: 5px solid #0284c7;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-top: 20px;
+        }
+
+        .goal-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0284c7;
+            margin-bottom: 12px;
+        }
+
+        .target-degree {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .goal-list {
             list-style: none;
             padding-left: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .goal-box li {
+        .goal-list li {
             position: relative;
-            padding-left: 28px;
-            font-size: 20px;
-            line-height: 1.9;
+            padding-left: 20px;
+            font-size: 18px;
+            line-height: 1.7;
             color: #334155;
-            margin-bottom: 10px;
         }
 
-        .goal-box li::before {
+        .goal-list li::before {
             content: "•";
             position: absolute;
-            left: 8px;
+            left: 0;
+            top: -1px;
             color: #0284c7;
-            font-size: 24px;
-            line-height: 1;
-            top: 2px;
+            font-size: 22px;
         }
 
         @media (max-width: 900px) {
             .main-hero { flex-direction: column; }
             .center-card { flex-direction: column; width: 100%; text-align: center; }
             .info-card-large { padding: 28px 20px; }
-            .info-card-large p { font-size: 18px; }
-            .info-card-large h3 { font-size: 24px; }
+            .info-item { font-size: 16px; }
+            .info-card-large h3 { font-size: 22px; }
             .goal-box { padding: 18px 20px; }
-            .goal-box li { font-size: 18px; }
+            .goal-title { font-size: 18px; }
+            .target-degree { font-size: 16px; }
+            .goal-list li { font-size: 16px; }
         }
     </style>
 </head>
@@ -347,21 +372,24 @@
         <!-- ข้อมูลส่วนตัว -->
         <div class="info-card-large">
             <h3>ข้อมูลส่วนตัว (Personal Details)</h3>
-            <p><strong>ชื่อ-นามสกุล:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร</p>
-            <p><strong>Name:</strong> Mr. Natthawat Uearakolan</p>
-            <p><strong>ชื่อเล่น:</strong> ปอมปอม</p>
-            <p><strong>Nickname:</strong> Pompom</p>
-            <p><strong>ระดับชั้น:</strong> ชั้นมัธยมศึกษาปีที่ 6</p>
-            <p><strong>แผนการเรียน:</strong> วิทยาการคอมพิวเตอร์ (CSE)</p>
-            <p><strong>โรงเรียนที่ศึกษาอยู่:</strong> โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</p>
             
-            <!-- กล่องเป้าหมายการศึกษาแบบปรับแต่งพิเศษ -->
+            <div class="info-list">
+                <div class="info-item"><strong>ชื่อ-นามสกุล:</strong> นาย ณัฐวรรธน์ เอื้อรักษ์โอฬาร</div>
+                <div class="info-item"><strong>Name:</strong> Mr. Natthawat Uearakolan</div>
+                <div class="info-item"><strong>ชื่อเล่น:</strong> ปอมปอม</div>
+                <div class="info-item"><strong>Nickname:</strong> Pompom</div>
+                <div class="info-item"><strong>ระดับชั้น:</strong> ชั้นมัธยมศึกษาปีที่ 6</div>
+                <div class="info-item"><strong>แผนการเรียน:</strong> วิทยาการคอมพิวเตอร์ (CSE)</div>
+                <div class="info-item"><strong>โรงเรียนที่ศึกษาอยู่:</strong> โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</div>
+            </div>
+
+            <!-- กล่องเป้าหมายการศึกษา -->
             <div class="goal-box">
                 <div class="goal-title">เป้าหมายทางการศึกษา (Goal & Motivation)</div>
                 <div class="target-degree">
                     หลักสูตรแพทยศาสตรบัณฑิต คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล
                 </div>
-                <ul>
+                <ul class="goal-list">
                     <li><strong>แรงบันดาลใจ:</strong> มีความสนใจในสาขาแพทยศาสตร์ เนื่องจากเป็นสาขาที่ได้นำความรู้มาใช้วินิจฉัย ค้นหาสาเหตุของโรค และรักษาผู้ป่วยได้อย่างตรงจุด</li>
                     <li><strong>ความตั้งใจ:</strong> ตระหนักถึงความสำคัญของบุคลากรทางการแพทย์ในการช่วยเหลือชีวิตและดูแลสุขภาวะของผู้คน จึงมีความมุ่งมั่นอย่างยิ่งที่จะศึกษาและพัฒนาตนเองในสายวิชาชีพนี้</li>
                 </ul>
