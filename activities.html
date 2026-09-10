@@ -288,11 +288,12 @@
             line-height: 1.6;
         }
 
+        /* กำหนด Grid Layout ให้แสดง 3 ช่องแบบเท่ากัน */
         .activity-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 16px;
-            margin-top: 16px;
+            margin-top: 18px;
         }
 
         .gallery-box {
@@ -310,6 +311,8 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s ease;
+            text-align: center;
+            padding: 10px;
         }
 
         .gallery-box:hover {
@@ -331,6 +334,7 @@
             .timeline-title { font-size: 19px; }
             .timeline-sub { font-size: 17px; }
             .timeline-desc { font-size: 16px; }
+            .activity-gallery { grid-template-columns: 1fr; } /* ปรับเป็น 1 คอลัมน์บนมือถือ */
         }
     </style>
 </head>
@@ -391,14 +395,19 @@
                         <div class="timeline-desc">
                             นำเสนอโครงงานวิจัยการประยุกต์ใช้ปัญญาประดิษฐ์ (AI) ในการช่วยคัดกรองพฤติกรรมสุขภาพเบื้องต้น ร่วมกับการใช้วิทยาการคอมพิวเตอร์ (CSE) เชื่อมโยงข้อมูลทางการแพทย์
                         </div>
+                        <!-- โซนใส่ภาพผลงานและกิจกรรม 3 ภาพ -->
                         <div class="activity-gallery">
                             <div class="gallery-box">
                                 <span>📷</span>
-                                <div>เกียรติบัตรรางวัล</div>
+                                <div>ภาพที่ 1<br>(เกียรติบัตรรางวัล)</div>
                             </div>
                             <div class="gallery-box">
                                 <span>📷</span>
-                                <div>บรรยากาศการนำเสนอ</div>
+                                <div>ภาพที่ 2<br>(บรรยากาศการนำเสนอ)</div>
+                            </div>
+                            <div class="gallery-box">
+                                <span>📷</span>
+                                <div>ภาพที่ 3<br>(ชิ้นงาน/ภาพร่วมกับคณะกรรมการ)</div>
                             </div>
                         </div>
                     </div>
@@ -422,16 +431,6 @@
                         <div class="timeline-sub">โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" | ปีการศึกษา 2566 - 2567</div>
                         <div class="timeline-desc">
                             จัดกิจกรรมอบรมการปฐมพยาบาลเบื้องต้น (First Aid) และการช่วยชีวิตขั้นพื้นฐาน (CPR) ให้กับนักเรียนและประชาชนในชุมชนท้องถิ่น
-                        </div>
-                        <div class="activity-gallery">
-                            <div class="gallery-box">
-                                <span>📷</span>
-                                <div>ภาพการฝึกสอน CPR</div>
-                            </div>
-                            <div class="gallery-box">
-                                <span>📷</span>
-                                <div>ภาพรวมทีมจิตอาสา</div>
-                            </div>
                         </div>
                     </div>
 
