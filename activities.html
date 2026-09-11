@@ -242,38 +242,45 @@
         .activity-gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            gap: 20px;
             margin-top: 10px;
+        }
+
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
 
         .gallery-box {
             width: 100%;
             aspect-ratio: 4 / 3;
             background: #f1f5f9;
-            border: 2px dashed #cbd5e1;
+            border: 2px solid #cbd5e1;
             border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #64748b;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-            padding: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
             border-color: #00bcd4;
-            background: #e0f2fe;
-            color: #0284c7;
         }
 
-        .gallery-box span {
-            font-size: 32px;
-            margin-bottom: 6px;
+        .gallery-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            font-size: 16px;
+            font-weight: 600;
+            color: #334155;
+            text-align: center;
         }
 
         @media (max-width: 900px) {
@@ -333,18 +340,31 @@
             <div class="info-card">
                 <h3>ผลงานและกิจกรรมที่เข้าร่วม</h3>
                 <div class="activity-gallery">
-                    <div class="gallery-box">
-                        <span>📷</span>
-                        <div>ภาพที่ 1</div>
+                    
+                    <!-- ภาพที่ 1 -->
+                    <div class="gallery-item">
+                        <div class="gallery-box">
+                            <img src="IMG_0616.jpeg" alt="กิจกรรมภาพที่ 1">
+                        </div>
+                        <div class="gallery-caption">ภาพที่ 1</div>
                     </div>
-                    <div class="gallery-box">
-                        <span>📷</span>
-                        <div>ภาพที่ 2</div>
+
+                    <!-- ภาพที่ 2 -->
+                    <div class="gallery-item">
+                        <div class="gallery-box">
+                            <img src="IMG_0618.jpeg" alt="กิจกรรมภาพที่ 2">
+                        </div>
+                        <div class="gallery-caption">ภาพที่ 2</div>
                     </div>
-                    <div class="gallery-box">
-                        <span>📷</span>
-                        <div>ภาพที่ 3</div>
+
+                    <!-- ภาพที่ 3 -->
+                    <div class="gallery-item">
+                        <div class="gallery-box">
+                            <img src="IMG_0617.jpeg" alt="กิจกรรมภาพที่ 3">
+                        </div>
+                        <div class="gallery-caption">ภาพที่ 3</div>
                     </div>
+
                 </div>
             </div>
         </div>
